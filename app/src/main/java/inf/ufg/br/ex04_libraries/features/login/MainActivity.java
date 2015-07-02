@@ -124,7 +124,7 @@ public class MainActivity extends ActionBarActivity implements WebInterface {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        if(ringProgressDialog.isShowing()){
+        if(ringProgressDialog != null && ringProgressDialog.isShowing()){
             webConnection.cancel(true);
         }
     }

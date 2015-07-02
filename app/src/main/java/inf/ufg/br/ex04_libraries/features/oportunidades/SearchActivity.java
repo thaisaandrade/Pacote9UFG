@@ -2,6 +2,7 @@ package inf.ufg.br.ex04_libraries.features.oportunidades;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.support.v7.app.ActionBarActivity;
@@ -204,5 +205,6 @@ public class  SearchActivity extends ActionBarActivity
         if(ringProgressDialog.isShowing()){
             taskCurso.cancel(true);
         }
+        finish();
     }
 }
