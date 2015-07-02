@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Pacote9</string>
 
+    <string name="cursos_prompt">Escolha o Curso</string>
+
     <string name="hint_username">Username</string>
     <string name="hint_password">Password</string>
     <string name="label_login">Login</string>
@@ -10,6 +12,8 @@
     <string name="warning_empty_username">Faltou o username</string>
     <string name="warning_empty_password">Faltou a senha</string>
     <string name="warning_fazendo_login">Fazendo login</string>
+    <string name="warning_procurando_cursos">Buscando cursos</string>
+    <string name="warning_procurando_oportunidades">Buscando oportunidades</string>
 
     <string name="title_activity_colors">ColorsActivity</string>
 

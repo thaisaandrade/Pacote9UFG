@@ -3,6 +3,7 @@ package inf.ufg.br.ex04_libraries.features.login;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
@@ -13,7 +14,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import inf.ufg.br.ex04_libraries.features.colors.SearchActivity;
+import inf.ufg.br.ex04_libraries.features.oportunidades.SearchActivity;
 import inf.ufg.br.ex04_libraries.R;
 import inf.ufg.br.ex04_libraries.utils.WebInterface;
 import inf.ufg.br.ex04_libraries.model.User;
@@ -23,15 +24,15 @@ public class MainActivity extends ActionBarActivity implements WebInterface {
 
     private ProgressDialog ringProgressDialog;
     private AsyncTask webConnection;
+    private SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
+
     }
-
-
 
     public void login(View v){
         checkFields();
@@ -100,6 +101,10 @@ public class MainActivity extends ActionBarActivity implements WebInterface {
 
         Intent intent = new Intent(this, SearchActivity.class);
         intent.putExtra("test", "UFG");
+
+        String lastSearch = getSharedPreferences("lastSearch", Context.MODE_PRIVATE).getString("curso", "");
+
+        intent.putExtra("curso", lastSearch);
         startActivity(intent);
     }
 
@@ -107,6 +112,11 @@ public class MainActivity extends ActionBarActivity implements WebInterface {
         int id = v.getId();
         if(id == R.id.button2){
             Intent intent = new Intent(this, SearchActivity.class);
+
+            String lastSearch = getSharedPreferences("lastSearch", Context.MODE_PRIVATE).getString("curso", "");
+
+            intent.putExtra("curso", lastSearch);
+
             startActivity(intent);
         }
 
@@ -119,4 +129,7 @@ public class MainActivity extends ActionBarActivity implements WebInterface {
             webConnection.cancel(true);
         }
     }
+
+
+
 }

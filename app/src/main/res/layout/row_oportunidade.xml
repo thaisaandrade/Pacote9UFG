@@ -18,34 +18,34 @@
             android:layout_height="wrap_content"
             android:padding="16dp"
             >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/cidade" />
 
-            <View
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:id="@+id/icon"
-                android:layout_alignParentLeft="true"
-                android:layout_marginRight="16dp"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/nome_oportunidade"
+
+                android:textSize="25sp"
                 android:layout_centerVertical="true"
+                android:layout_below="@id/cidade"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/valor_bolsa"
+                android:layout_below="@id/nome_oportunidade"
                 />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/colorName"
-                android:layout_toRightOf="@id/icon"
-                android:layout_alignTop="@id/icon"
-                android:layout_alignParentTop="true"
-
-                android:textSize="30sp"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/colorValue"
-                android:layout_toRightOf="@id/icon"
-                android:layout_below="@id/colorName"
-                />
+                android:id="@+id/tipo"
+                android:layout_below ="@id/nome_oportunidade"
+                android:layout_toRightOf="@id/valor_bolsa"
+                android:paddingLeft="10dp" />
 
         </RelativeLayout>
 

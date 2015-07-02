@@ -1,0 +1,68 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <Spinner
+            android:id="@+id/cursos"
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:prompt= "@string/cursos_prompt"
+            android:layout_marginLeft="10dp"
+            android:touchscreenBlocksFocus="false"
+            android:theme="@style/Widget.MyApp.HeaderBar.Spinner"
+            android:dropDownWidth="wrap_content" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center_vertical|center_horizontal">
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/opoes"
+                android:checkedButton="@+id/estagio" >
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/estagio"
+                    android:text="Estágios" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/emprego"
+                    android:text="Empregos" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/pesquisa"
+                    android:text="Pesquisa" />
+
+            </RadioGroup>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/rv"
+        style="@style/Base.TextAppearance.AppCompat.Menu" />
+
+
+
+</LinearLayout>

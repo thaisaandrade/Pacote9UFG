@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView"
+        xmlns:android="http://schemas.android.com/apk/res/android" >
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical" android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:theme="@style/Base.Theme.AppCompat.Light"
+            android:background="#FFECECEC">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/titulo_details"
+                android:layout_gravity="top|center_horizontal"
+                android:textColor="#ff7d7d7d"
+                android:textStyle="bold"
+                android:padding="15dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/cidade_details"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#ff7d7d7d" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/horas_details"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#ff7d7d7d" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/local_details"
+                android:textColor="#ff7d7d7d" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/endereco_details"
+                android:textColor="#ff7d7d7d" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/bolsa_details"
+                android:textColor="#ff7d7d7d" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/valor_details"
+                android:textColor="#ff7d7d7d" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/horario_details"
+                android:textColor="#ff7d7d7d" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/descricao_details"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#ff7d7d7d" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/telefone_details"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#ff7d7d7d" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autoLink="email"
+                android:id="@+id/email_details"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#ff7d7d7d" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

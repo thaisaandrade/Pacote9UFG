@@ -5,17 +5,21 @@
         <!-- Customize your theme here. -->
 
 
-    <item name="android:actionBarStyle" tools:targetApi="11">@style/MyActionBar</item>
+        <item name="android:actionBarStyle" tools:targetApi="11">@style/MyActionBar</item>
 
-    <!-- Support library compatibility -->
-    <item name="actionBarStyle">@style/MyActionBar</item>
-</style>
+        <!-- Support library compatibility -->
+        <item name="actionBarStyle">@style/MyActionBar</item>
+    </style>
     <!-- Action bar theme -->
-<style name="MyActionBar" parent="@style/Widget.AppCompat.Light.ActionBar">
-<item name="background">@color/azul</item>
-</style>
+    <style name="MyActionBar" parent="@style/Widget.AppCompat.Light.ActionBar">
+        <item name="background">@color/azul</item>
+    </style>
 
-
+    <style name="Widget.MyApp.HeaderBar.Spinner" parent="Widget.AppCompat.Light.Spinner.DropDown.ActionBar">
+        <item name="android:background">?android:selectableItemBackground</item>
+        <item name="android:dropDownSelector">?android:selectableItemBackground</item>
+        <item name="android:divider">@null</item>
+    </style>
 
 
 </resources>

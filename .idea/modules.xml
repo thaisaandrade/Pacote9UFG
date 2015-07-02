@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Ex05_LibrariesMaven.iml" filepath="$PROJECT_DIR$/Ex05_LibrariesMaven.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Pacote9UFG.iml" filepath="$PROJECT_DIR$/Pacote9UFG.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
 </project>
+
