@@ -112,7 +112,7 @@ public class MainActivity extends ActionBarActivity implements WebInterface {
             Intent intent = new Intent(this, SearchActivity.class);
             intent.putExtra("titulo", (String) "Mural UFG");
 
-            String lastSearch = getSharedPreferences("lastSearch", Context.MODE_PRIVATE).getString("curso", "");
+            String lastSearch = getSharedPreferences("curso", Context.MODE_PRIVATE).getString("curso", "");
 
             intent.putExtra("curso", lastSearch);
 
