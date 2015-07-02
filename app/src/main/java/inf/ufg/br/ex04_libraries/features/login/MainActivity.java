@@ -100,11 +100,9 @@ public class MainActivity extends ActionBarActivity implements WebInterface {
         Log.d("RESPONSE", (String) object);
 
         Intent intent = new Intent(this, SearchActivity.class);
-        intent.putExtra("test", "UFG");
-
+        intent.putExtra("titulo", (String) "Mural UFG");
         String lastSearch = getSharedPreferences("lastSearch", Context.MODE_PRIVATE).getString("curso", "");
-
-        intent.putExtra("curso", lastSearch);
+        intent.putExtra("curso", (String) lastSearch);
         startActivity(intent);
     }
 
@@ -112,6 +110,7 @@ public class MainActivity extends ActionBarActivity implements WebInterface {
         int id = v.getId();
         if(id == R.id.button2){
             Intent intent = new Intent(this, SearchActivity.class);
+            intent.putExtra("titulo", (String) "Mural UFG");
 
             String lastSearch = getSharedPreferences("lastSearch", Context.MODE_PRIVATE).getString("curso", "");
 

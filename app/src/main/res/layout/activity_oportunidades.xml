@@ -16,7 +16,7 @@
             android:prompt= "@string/cursos_prompt"
             android:layout_marginLeft="10dp"
             android:touchscreenBlocksFocus="false"
-            android:theme="@style/Widget.MyApp.HeaderBar.Spinner"
+            android:theme="@style/Widget.AppCompat.Light.Spinner.DropDown.ActionBar"
             android:dropDownWidth="wrap_content" />
 
         <LinearLayout

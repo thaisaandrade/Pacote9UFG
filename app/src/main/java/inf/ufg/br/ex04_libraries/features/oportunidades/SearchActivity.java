@@ -1,6 +1,8 @@
 package inf.ufg.br.ex04_libraries.features.oportunidades;
 
 import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -35,21 +37,25 @@ public class  SearchActivity extends ActionBarActivity
     private RecyclerView rv;
     private RadioGroup opcoes;
     private RadioButton estagio, pesquisa, emprego;
+    private SharedPreferences sharedPreferences;
+    private String id_curso;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_oportunidades);
 
-        String nome = getIntent().getStringExtra("test");
+        String nome = getIntent().getStringExtra("titulo");
         getSupportActionBar().setTitle(nome);
 
-        String curso = getIntent().getStringExtra("curso");
+        id_curso = getIntent().getStringExtra("curso");
+
         final Spinner s =  (Spinner) findViewById(R.id.cursos);
         opcoes = (RadioGroup) findViewById(R.id.opoes);
         estagio = (RadioButton) findViewById(R.id.estagio);
         emprego = (RadioButton) findViewById(R.id.emprego);
         pesquisa = (RadioButton) findViewById(R.id.pesquisa);
+
         opcoes.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -90,10 +96,26 @@ public class  SearchActivity extends ActionBarActivity
 
         spinner_cursos = (Spinner) findViewById(R.id.cursos);
 
-        final ArrayAdapter<Curso> dataAdapter = new CursoAdapter(this,
+        final CursoAdapter dataAdapter = new CursoAdapter(this,
                 android.R.layout.simple_spinner_dropdown_item, cursos);
 
         spinner_cursos.setAdapter(dataAdapter);
+
+        if (id_curso != null && id_curso != "") {
+
+            int id = 0;
+
+            try {
+               id = Integer.parseInt(id_curso);
+            } catch (Exception e) {
+
+            }
+
+            int position_curso = dataAdapter.getPosition(dataAdapter.getItemById(id));
+            spinner_cursos.setSelection(position_curso);
+        }
+
+        sharedPreferences = getSharedPreferences("curso", Context.MODE_PRIVATE);
 
         spinner_cursos.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
@@ -102,6 +124,10 @@ public class  SearchActivity extends ActionBarActivity
                                        int position, long id) {
 
                 final Curso curso = (Curso) dataAdapter.getItem(position);
+
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("curso", String.valueOf(curso.getId()));
+                editor.commit();
 
                 int teste = opcoes.getCheckedRadioButtonId();
 

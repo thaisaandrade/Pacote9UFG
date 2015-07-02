@@ -35,6 +35,17 @@ public class CursoAdapter extends ArrayAdapter<Curso> {
         return values.get(position);
     }
 
+    public Curso getItemById(int id){
+
+        for (Curso c : values) {
+            if (c.getId() == id) {
+                return c;
+            }
+        }
+
+        return null;
+    }
+
     public long getItemId(int position){
         return position;
     }

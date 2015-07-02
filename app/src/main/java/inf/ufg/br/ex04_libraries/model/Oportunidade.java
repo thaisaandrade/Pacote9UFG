@@ -18,13 +18,14 @@ public class Oportunidade implements Serializable {
     private String telefone;
     private String email;
     private String descricao;
+    private String horario;
 
     public Oportunidade() {
     }
 
     public Oportunidade(int id, String horas, String titulo, String cidade
             , String bolsa, String valor, String local, String endereco
-            , String telefone, String email, String descricao) {
+            , String telefone, String email, String descricao, String horario) {
         this.id = id;
         this.horas = horas;
         this.titulo = titulo;
@@ -36,6 +37,7 @@ public class Oportunidade implements Serializable {
         this.telefone = telefone;
         this.email = email;
         this.descricao = descricao;
+        this.horario = horario;
     }
 
     public int getId() {
@@ -124,5 +126,13 @@ public class Oportunidade implements Serializable {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+
+    public String getHorario() {
+        return horario;
+    }
+
+    public void setHorario(String horario) {
+        this.horario = horario;
     }
 }

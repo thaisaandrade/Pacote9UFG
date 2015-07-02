@@ -26,6 +26,7 @@ public class DetailsActivity extends FragmentActivity {
     Oportunidade oportunidade;
     TextView id;
     TextView horas;
+    TextView horario;
     TextView titulo;
     TextView descricao;
     TextView cidade;
@@ -50,7 +51,7 @@ public class DetailsActivity extends FragmentActivity {
         descricao = (TextView)findViewById(R.id.descricao_details);
         cidade = (TextView)findViewById(R.id.cidade_details);
         bolsa = (TextView)findViewById(R.id.bolsa_details);
-
+        horario = (TextView)findViewById(R.id.horario_details);
         valor = (TextView)findViewById(R.id.valor_details);
         local = (TextView)findViewById(R.id.local_details);
         endereco = (TextView)findViewById(R.id.endereco_details);
@@ -74,6 +75,7 @@ public class DetailsActivity extends FragmentActivity {
         });
 
         horas.setText("Carga horária: " + oportunidade.getHoras() + " hs semanais");
+        horario.setText("Horário: " + oportunidade.getHorario());
         titulo.setText("Vaga: " + oportunidade.getTitulo().toUpperCase());
         descricao.setText("Descrição: " + oportunidade.getDescricao());
         cidade.setText("Cidade: " + oportunidade.getCidade().toUpperCase());
