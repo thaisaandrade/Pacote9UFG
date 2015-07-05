@@ -15,9 +15,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import inf.ufg.br.ex04_libraries.features.oportunidades.SearchActivity;
-import inf.ufg.br.ex04_libraries.R;
 import inf.ufg.br.ex04_libraries.utils.WebInterface;
 import inf.ufg.br.ex04_libraries.model.User;
+import inf.ufg.br.muralufg.R;
 
 
 public class MainActivity extends ActionBarActivity implements WebInterface {

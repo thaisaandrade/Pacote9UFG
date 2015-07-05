@@ -14,8 +14,8 @@ import android.widget.TextView;
 import java.io.Serializable;
 import java.util.List;
 
-import inf.ufg.br.ex04_libraries.R;
 import inf.ufg.br.ex04_libraries.model.Oportunidade;
+import inf.ufg.br.muralufg.R;
 
 /**
  * Created by Marla Aragão.

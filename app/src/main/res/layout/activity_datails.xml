@@ -95,6 +95,11 @@
                 android:layout_gravity="center"
                 android:textColor="#ff7d7d7d" />
 
+            <com.facebook.share.widget.ShareButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/fb_share_button"
+                android:layout_gravity="center_horizontal" />
 
         </LinearLayout>
     </ScrollView>

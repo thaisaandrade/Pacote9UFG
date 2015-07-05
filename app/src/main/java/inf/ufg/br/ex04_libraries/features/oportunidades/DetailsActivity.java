@@ -1,9 +1,12 @@
 package inf.ufg.br.ex04_libraries.features.oportunidades;
 
 import android.annotation.TargetApi;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.graphics.Bitmap;
+import android.graphics.Rect;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -16,9 +19,13 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.facebook.FacebookSdk;
+import com.facebook.share.model.ShareContent;
+import com.facebook.share.model.SharePhoto;
+import com.facebook.share.model.SharePhotoContent;
+import com.facebook.share.widget.ShareButton;
 
-import inf.ufg.br.ex04_libraries.R;
 import inf.ufg.br.ex04_libraries.model.Oportunidade;
+import inf.ufg.br.muralufg.R;
 
 /**
  * Created by Marla Aragão on 02/07/2015.
@@ -43,9 +50,20 @@ public class DetailsActivity extends FragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        super.onCreate(savedInstanceState);
         FacebookSdk.sdkInitialize(getApplicationContext());
+        super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_datails);
+
+        ShareButton shareButton = (ShareButton)findViewById(R.id.fb_share_button);
+        Bitmap image = takeScreenShot(this);
+        SharePhoto photo = new SharePhoto.Builder()
+                .setBitmap(image)
+                .build();
+        SharePhotoContent content = new SharePhotoContent.Builder()
+                .addPhoto(photo)
+                .build();
+        shareButton.setShareContent(content);
 
         this.oportunidade = (Oportunidade)getIntent().getSerializableExtra("oportunidade");
 
@@ -93,5 +111,22 @@ public class DetailsActivity extends FragmentActivity {
 
     public boolean estaNaHorizontal() {
         return getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
+    }
+
+    private static Bitmap takeScreenShot(Activity activity)
+    {
+        View view = activity.getWindow().getDecorView();
+        view.setDrawingCacheEnabled(true);
+        view.buildDrawingCache();
+        Bitmap b1 = view.getDrawingCache();
+        Rect frame = new Rect();
+        activity.getWindow().getDecorView().getWindowVisibleDisplayFrame(frame);
+        int statusBarHeight = frame.top;
+        int width = activity.getWindowManager().getDefaultDisplay().getWidth();
+        int height = activity.getWindowManager().getDefaultDisplay().getHeight();
+
+        Bitmap b = Bitmap.createBitmap(b1, 0, statusBarHeight, width, height  - statusBarHeight);
+        view.destroyDrawingCache();
+        return b;
     }
 }

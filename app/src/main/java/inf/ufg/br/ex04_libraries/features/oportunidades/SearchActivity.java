@@ -20,12 +20,12 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-import inf.ufg.br.ex04_libraries.R;
 import inf.ufg.br.ex04_libraries.features.cursos.ConsultCurso;
 import inf.ufg.br.ex04_libraries.features.cursos.CursoAdapter;
 import inf.ufg.br.ex04_libraries.model.Oportunidade;
 import inf.ufg.br.ex04_libraries.model.Curso;
 import inf.ufg.br.ex04_libraries.utils.WebInterface;
+import inf.ufg.br.muralufg.R;
 
 
 public class  SearchActivity extends ActionBarActivity
