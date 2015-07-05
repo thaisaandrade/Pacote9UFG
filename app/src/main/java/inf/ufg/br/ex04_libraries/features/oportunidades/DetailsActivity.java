@@ -15,6 +15,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.facebook.FacebookSdk;
+
 import inf.ufg.br.ex04_libraries.R;
 import inf.ufg.br.ex04_libraries.model.Oportunidade;
 
@@ -42,6 +44,7 @@ public class DetailsActivity extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+        FacebookSdk.sdkInitialize(getApplicationContext());
         setContentView(R.layout.activity_datails);
 
         this.oportunidade = (Oportunidade)getIntent().getSerializableExtra("oportunidade");

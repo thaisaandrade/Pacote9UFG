@@ -12,6 +12,19 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+
+        <activity android:name="com.facebook.FacebookActivity"
+            android:configChanges=
+                "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:label="@string/app_name" />
+
+        <provider android:authorities="com.facebook.app.FacebookContentProvider1463215400644835"
+            android:name="com.facebook.FacebookContentProvider"
+            android:exported="true" />
+
         <activity
             android:name="inf.ufg.br.muralufg.features.login.MainActivity"
             android:label="@string/app_name" >
