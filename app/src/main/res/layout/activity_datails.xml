@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="@color/branco">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -13,31 +17,31 @@
             android:orientation="vertical" android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:theme="@style/Base.Theme.AppCompat.Light"
-            android:background="#FFECECEC">
+            >
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:id="@+id/titulo_details"
-                android:layout_gravity="top|center_horizontal"
+                android:layout_gravity="center"
                 android:textColor="#ff7d7d7d"
-                android:textStyle="bold"
-                android:padding="15dp" />
+                android:textStyle="bold" />
+                <!--android:padding="15dp" /> -->
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/cidade_details"
-                android:layout_gravity="center_horizontal"
-                android:textColor="#ff7d7d7d" />
+                android:textColor="#ff7d7d7d"
+                android:textStyle="bold"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/horas_details"
-                android:layout_gravity="center_horizontal"
-                android:textColor="#ff7d7d7d" />
+                android:textColor="#ff7d7d7d"
+                android:textStyle="bold"/>
 
 
             <TextView
@@ -74,14 +78,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/descricao_details"
-                android:layout_gravity="center_horizontal"
-                android:textColor="#ff7d7d7d" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/telefone_details"
-                android:layout_gravity="center_horizontal"
                 android:textColor="#ff7d7d7d" />
 
             <TextView
@@ -89,8 +85,16 @@
                 android:layout_height="wrap_content"
                 android:autoLink="email"
                 android:id="@+id/email_details"
-                android:layout_gravity="center_horizontal"
                 android:textColor="#ff7d7d7d" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/telefone_details"
+                android:drawableLeft="@drawable/ic_call_black_24dp"
+                android:layout_gravity="center"
+                android:textColor="#ff7d7d7d" />
+
 
         </LinearLayout>
     </ScrollView>
