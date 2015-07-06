@@ -1,4 +1,4 @@
-package inf.ufg.br.ex04_libraries.features.oportunidades;
+package inf.ufg.br.muralufg.features.oportunidades;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -14,8 +14,8 @@ import android.widget.TextView;
 import java.io.Serializable;
 import java.util.List;
 
-import inf.ufg.br.ex04_libraries.R;
-import inf.ufg.br.ex04_libraries.model.Oportunidade;
+import inf.ufg.br.muralufg.R;
+import inf.ufg.br.muralufg.model.Oportunidade;
 
 /**
  * Created by Marla Aragão.

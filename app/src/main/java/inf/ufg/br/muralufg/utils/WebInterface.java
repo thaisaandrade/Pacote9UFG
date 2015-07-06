@@ -1,4 +1,4 @@
-package inf.ufg.br.ex04_libraries.utils;
+package inf.ufg.br.muralufg.utils;
 
 /**
  * Created by marceloquinta on 24/04/15.

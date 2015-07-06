@@ -1,4 +1,4 @@
-package inf.ufg.br.ex04_libraries.features.login;
+package inf.ufg.br.muralufg.features.login;
 
 import android.os.AsyncTask;
 
@@ -20,8 +20,8 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
-import inf.ufg.br.ex04_libraries.utils.WebInterface;
-import inf.ufg.br.ex04_libraries.model.User;
+import inf.ufg.br.muralufg.utils.WebInterface;
+import inf.ufg.br.muralufg.model.User;
 
 
 /**

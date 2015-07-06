@@ -1,4 +1,4 @@
-package inf.ufg.br.ex04_libraries;
+package inf.ufg.br.muralufg;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

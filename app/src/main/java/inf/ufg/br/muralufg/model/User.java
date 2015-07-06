@@ -1,8 +1,6 @@
-package inf.ufg.br.ex04_libraries.model;
+package inf.ufg.br.muralufg.model;
 
-/**
- * Created by marceloquinta on 24/04/15.
- */
+
 public class User {
 
     private String name;

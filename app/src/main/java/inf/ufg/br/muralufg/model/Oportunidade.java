@@ -1,4 +1,4 @@
-package inf.ufg.br.ex04_libraries.model;
+package inf.ufg.br.muralufg.model;
 
 import java.io.Serializable;
 

@@ -1,4 +1,4 @@
-package inf.ufg.br.ex04_libraries.features.cursos;
+package inf.ufg.br.muralufg.features.cursos;
 
 import android.content.Context;
 import android.view.View;
@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import inf.ufg.br.ex04_libraries.model.Curso;
+import inf.ufg.br.muralufg.model.Curso;
 
 /**
  * Created by Marla Aragão on 01/07/2015.

@@ -1,4 +1,4 @@
-package inf.ufg.br.ex04_libraries.features.login;
+package inf.ufg.br.muralufg.features.login;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -14,10 +14,10 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import inf.ufg.br.ex04_libraries.features.oportunidades.SearchActivity;
-import inf.ufg.br.ex04_libraries.R;
-import inf.ufg.br.ex04_libraries.utils.WebInterface;
-import inf.ufg.br.ex04_libraries.model.User;
+import inf.ufg.br.muralufg.features.oportunidades.SearchActivity;
+import inf.ufg.br.muralufg.R;
+import inf.ufg.br.muralufg.utils.WebInterface;
+import inf.ufg.br.muralufg.model.User;
 
 
 public class MainActivity extends ActionBarActivity implements WebInterface {

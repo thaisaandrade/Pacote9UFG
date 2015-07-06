@@ -1,4 +1,4 @@
-package inf.ufg.br.ex04_libraries.features.oportunidades;
+package inf.ufg.br.muralufg.features.oportunidades;
 
 import android.os.AsyncTask;
 
@@ -11,11 +11,11 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
-import inf.ufg.br.ex04_libraries.model.Curso;
-import inf.ufg.br.ex04_libraries.model.Oportunidade;
+import inf.ufg.br.muralufg.model.Curso;
+import inf.ufg.br.muralufg.model.Oportunidade;
+
 
 /**
  * Created by Marla Aragão.

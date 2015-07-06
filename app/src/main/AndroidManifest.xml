@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="inf.ufg.br.ex04_libraries" >
+    package="inf.ufg.br.muralufg" >
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -12,8 +12,21 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+
+        <activity android:name="com.facebook.FacebookActivity"
+            android:configChanges=
+                "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:label="@string/app_name" />
+
+        <provider android:authorities="com.facebook.app.FacebookContentProvider1463215400644835"
+            android:name="com.facebook.FacebookContentProvider"
+            android:exported="true" />
+
         <activity
-            android:name=".features.login.MainActivity"
+            android:name="inf.ufg.br.muralufg.features.login.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,12 +35,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".features.oportunidades.SearchActivity"
+            android:name="inf.ufg.br.muralufg.features.oportunidades.SearchActivity"
             android:label="@string/title_activity_colors" >
         </activity>
 
         <activity
-            android:name=".features.oportunidades.DetailsActivity" >
+            android:name="inf.ufg.br.muralufg.features.oportunidades.DetailsActivity" >
 
         </activity>
 

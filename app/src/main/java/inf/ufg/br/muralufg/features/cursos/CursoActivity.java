@@ -1,12 +1,11 @@
-package inf.ufg.br.ex04_libraries.features.cursos;
+package inf.ufg.br.muralufg.features.cursos;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.Spinner;
-import inf.ufg.br.ex04_libraries.R;
-import inf.ufg.br.ex04_libraries.model.Curso;
+import inf.ufg.br.muralufg.R;
+import inf.ufg.br.muralufg.model.Curso;
 
 import java.util.List;
 

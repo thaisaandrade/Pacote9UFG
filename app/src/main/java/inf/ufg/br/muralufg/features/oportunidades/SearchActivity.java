@@ -1,8 +1,7 @@
-package inf.ufg.br.ex04_libraries.features.oportunidades;
+package inf.ufg.br.muralufg.features.oportunidades;
 
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.support.v7.app.ActionBarActivity;
@@ -11,7 +10,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
@@ -20,12 +18,12 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-import inf.ufg.br.ex04_libraries.R;
-import inf.ufg.br.ex04_libraries.features.cursos.ConsultCurso;
-import inf.ufg.br.ex04_libraries.features.cursos.CursoAdapter;
-import inf.ufg.br.ex04_libraries.model.Oportunidade;
-import inf.ufg.br.ex04_libraries.model.Curso;
-import inf.ufg.br.ex04_libraries.utils.WebInterface;
+import inf.ufg.br.muralufg.R;
+import inf.ufg.br.muralufg.features.cursos.ConsultCurso;
+import inf.ufg.br.muralufg.features.cursos.CursoAdapter;
+import inf.ufg.br.muralufg.model.Oportunidade;
+import inf.ufg.br.muralufg.model.Curso;
+import inf.ufg.br.muralufg.utils.WebInterface;
 
 
 public class  SearchActivity extends ActionBarActivity
