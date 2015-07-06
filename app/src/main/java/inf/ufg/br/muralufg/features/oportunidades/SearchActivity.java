@@ -3,6 +3,7 @@ package inf.ufg.br.muralufg.features.oportunidades;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
 import android.os.AsyncTask;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -45,6 +46,7 @@ public class  SearchActivity extends ActionBarActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_oportunidades);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         String nome = getIntent().getStringExtra("titulo");
         getSupportActionBar().setTitle(nome);
