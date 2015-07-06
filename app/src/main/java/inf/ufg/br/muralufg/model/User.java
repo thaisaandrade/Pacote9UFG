@@ -5,6 +5,10 @@ public class User {
 
     private String name;
     private String password;
+    private String curso;
+
+    public User() {
+    }
 
     public User(String name) {
         this.name = name;
@@ -24,5 +28,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getCurso() {
+        return curso;
+    }
+
+    public void setCurso(String curso) {
+        this.curso = curso;
     }
 }

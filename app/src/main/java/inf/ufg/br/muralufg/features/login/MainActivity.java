@@ -20,7 +20,7 @@ import inf.ufg.br.muralufg.utils.WebInterface;
 import inf.ufg.br.muralufg.model.User;
 
 
-public class MainActivity extends ActionBarActivity implements WebInterface {
+public class MainActivity extends ActionBarActivity implements WebInterface, LoginAsyncTask.ConsultLogin {
 
     private ProgressDialog ringProgressDialog;
     private AsyncTask webConnection;
@@ -96,14 +96,14 @@ public class MainActivity extends ActionBarActivity implements WebInterface {
 
     @Override
     public void handleResponse(Object object) {
-        ringProgressDialog.dismiss();
+        /*ringProgressDialog.dismiss();
         Log.d("RESPONSE", (String) object);
 
         Intent intent = new Intent(this, SearchActivity.class);
         intent.putExtra("titulo", (String) "Mural UFG");
         String lastSearch = getSharedPreferences("lastSearch", Context.MODE_PRIVATE).getString("curso", "");
         intent.putExtra("curso", (String) lastSearch);
-        startActivity(intent);
+        startActivity(intent);*/
     }
 
     public void searchVisitante(View v){
@@ -126,6 +126,24 @@ public class MainActivity extends ActionBarActivity implements WebInterface {
         super.onBackPressed();
         if(ringProgressDialog != null && ringProgressDialog.isShowing()){
             webConnection.cancel(true);
+        }
+    }
+
+    @Override
+    public void onConcludeConsultLogin(String curso) {
+        ringProgressDialog.dismiss();
+
+        if (curso == null || curso.trim().equals("")) {
+            showError("Usuario e/ou senha incorreto(s)");
+        } else {
+
+            Log.d("RESPONSE", curso);
+
+            Intent intent = new Intent(this, SearchActivity.class);
+            intent.putExtra("titulo", (String) "Mural UFG");
+            //String lastSearch = getSharedPreferences("lastSearch", Context.MODE_PRIVATE).getString("curso", "");
+            intent.putExtra("curso", curso);
+            startActivity(intent);
         }
     }
 
