@@ -20,6 +20,9 @@ import android.widget.TextView;
 
 import com.facebook.FacebookSdk;
 import com.facebook.share.model.ShareContent;
+import com.facebook.share.model.ShareOpenGraphAction;
+import com.facebook.share.model.ShareOpenGraphContent;
+import com.facebook.share.model.ShareOpenGraphObject;
 import com.facebook.share.model.SharePhoto;
 import com.facebook.share.model.SharePhotoContent;
 import com.facebook.share.widget.ShareButton;
@@ -63,7 +66,30 @@ public class DetailsActivity extends FragmentActivity {
         SharePhotoContent content = new SharePhotoContent.Builder()
                 .addPhoto(photo)
                 .build();
-        shareButton.setShareContent(content);
+
+        ShareOpenGraphObject object = new ShareOpenGraphObject.Builder()
+                .putString("fitness:distance:units6", "Cidade: " + oportunidade.getCidade().toUpperCase())
+                .putString("og:description", "Vaga: " + oportunidade.getTitulo().toUpperCase())
+                .putString("fitness:duration:units", "Descrição: " + oportunidade.getDescricao())
+                .putString("og:type", "Carga horária: " + oportunidade.getHoras() + " hs semanais")
+                .putString("og:title", "Horário: " + oportunidade.getHorario())
+                .putString("fitness:speed:units", "Bolsa: " + (oportunidade.getBolsa().equals("S") ? "Possui" : "Não possui"))
+                .putString("fitness:speed:units2", "Valor da bolsa: R$ " + oportunidade.getValor())
+                .putString("fitness:speed:units3", "Empresa/Instituição: " + oportunidade.getLocal())
+                .putString("fitness:speed:units8", "Endereço: " + oportunidade.getEndereco())
+                .putString("fitness:speed:units9", "Telefone: " + oportunidade.getTelefone())
+                .putString("fitness:speed:units7", "Email: " + Html.fromHtml("<a href=\"" + oportunidade.getEmail() + "\">" + oportunidade.getEmail() + "</a>"))
+                .build();
+        ShareOpenGraphAction action = new ShareOpenGraphAction.Builder()
+                .setActionType("fitness.runs")
+                .putObject("fitness:course", object)
+                .build();
+        ShareOpenGraphContent content1 = new ShareOpenGraphContent.Builder()
+                .setPreviewPropertyName("fitness:course")
+                .setAction(action)
+                .build();
+
+        shareButton.setShareContent(content1);
 
         this.oportunidade = (Oportunidade)getIntent().getSerializableExtra("oportunidade");
 

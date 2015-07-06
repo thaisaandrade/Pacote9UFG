@@ -20,6 +20,9 @@ import android.widget.TextView;
 
 import com.facebook.CallbackManager;
 import com.facebook.FacebookSdk;
+import com.facebook.share.model.ShareOpenGraphAction;
+import com.facebook.share.model.ShareOpenGraphContent;
+import com.facebook.share.model.ShareOpenGraphObject;
 import com.facebook.share.model.SharePhoto;
 import com.facebook.share.model.SharePhotoContent;
 import com.facebook.share.widget.ShareButton;
@@ -60,17 +63,29 @@ public class DetailsActivity extends ActionBarActivity {
         setContentView(R.layout.activity_datails);
         getSupportActionBar().setTitle("Mural UFG");
 
-        ShareButton shareButton = (ShareButton)findViewById(R.id.fb_share_button);
-        Bitmap image = takeScreenShot(this);
-        SharePhoto photo = new SharePhoto.Builder()
-                .setBitmap(image)
-                .build();
-        SharePhotoContent content = new SharePhotoContent.Builder()
-                .addPhoto(photo)
-                .build();
-        shareButton.setShareContent(content);
-
         this.oportunidade = (Oportunidade)getIntent().getSerializableExtra("oportunidade");
+
+        /*ShareOpenGraphObject object = new ShareOpenGraphObject.Builder()
+                .putString("teste", "Cidade: " + oportunidade.getCidade().toUpperCase())
+                .putString("og:description", "Vaga: " + oportunidade.getTitulo().toUpperCase())
+                .putString("fitness:duration:units", "Descrição: " + oportunidade.getDescricao())
+                .putString("og:type", "Carga horária: " + oportunidade.getHoras() + " hs semanais")
+                .putString("og:title", "Horário: " + oportunidade.getHorario())
+                .putString("fitness:speed:units", "Bolsa: " + (oportunidade.getBolsa().equals("S") ? "Possui" : "Não possui"))
+                .putString("fitness:speed:units2", "Valor da bolsa: R$ " + oportunidade.getValor())
+                .putString("fitness:speed:units3", "Empresa/Instituição: " + oportunidade.getLocal())
+                .putString("fitness:speed:units8", "Endereço: " + oportunidade.getEndereco())
+                .putString("fitness:speed:units9", "Telefone: " + oportunidade.getTelefone())
+                .putString("fitness:speed:units7", "Email: " + Html.fromHtml("<a href=\"" + oportunidade.getEmail() + "\">" + oportunidade.getEmail() + "</a>"))
+                .build();
+        ShareOpenGraphAction action = new ShareOpenGraphAction.Builder()
+                .setActionType("news.publishes")
+                .putObject("news:teste", object)
+                .build();
+        ShareOpenGraphContent content1 = new ShareOpenGraphContent.Builder()
+                .setPreviewPropertyName("news:teste")
+                .setAction(action)
+                .build();*/
 
         horas = (TextView)findViewById(R.id.horas_details);
         titulo = (TextView)findViewById(R.id.titulo_details);
@@ -111,6 +126,17 @@ public class DetailsActivity extends ActionBarActivity {
         endereco.setText("Endereço: " + oportunidade.getEndereco());
         telefone.setText("" + oportunidade.getTelefone());
         email.setText("Email: " + Html.fromHtml("<a href=\"" + oportunidade.getEmail() + "\">" + oportunidade.getEmail() + "</a>"));
+
+
+        ShareButton shareButton = (ShareButton)findViewById(R.id.fb_share_button);
+        Bitmap image = takeScreenShot(this);
+        SharePhoto photo = new SharePhoto.Builder()
+                .setBitmap(image)
+                .build();
+        SharePhotoContent content = new SharePhotoContent.Builder()
+                .addPhoto(photo)
+                .build();
+        shareButton.setShareContent(content);
 
     }
 
