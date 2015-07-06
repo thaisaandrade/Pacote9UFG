@@ -9,7 +9,9 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Adapter;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
@@ -49,7 +51,9 @@ public class  SearchActivity extends ActionBarActivity
 
         id_curso = getIntent().getStringExtra("curso");
 
+
         final Spinner s =  (Spinner) findViewById(R.id.cursos);
+
         opcoes = (RadioGroup) findViewById(R.id.opoes);
         estagio = (RadioButton) findViewById(R.id.estagio);
         emprego = (RadioButton) findViewById(R.id.emprego);
@@ -95,10 +99,11 @@ public class  SearchActivity extends ActionBarActivity
 
         spinner_cursos = (Spinner) findViewById(R.id.cursos);
 
-        final CursoAdapter dataAdapter = new CursoAdapter(this,
-                android.R.layout.simple_spinner_dropdown_item, cursos);
+        final CursoAdapter dataAdapter = new CursoAdapter(this, android.R.layout.simple_spinner_dropdown_item, cursos);
+       // dataAdapter.setDropDownViewResource(R.layout.spinner_item);
 
         spinner_cursos.setAdapter(dataAdapter);
+
 
         if (id_curso != null && id_curso != "") {
 

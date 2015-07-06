@@ -19,13 +19,15 @@
             android:layout_height="55dp"
             android:prompt= "@string/cursos_prompt"
             android:touchscreenBlocksFocus="true"
-            android:theme="@style/Widget.AppCompat.Light.Spinner.DropDown.ActionBar"
-            android:dropDownWidth="wrap_content"
-            android:popupBackground="#ffe7e7e7"
-            android:popupElevation="@dimen/abc_action_bar_default_padding_material"
-            android:spinnerMode="dialog"
-            android:dropDownSelector="#ffb5b9bb"
-            android:focusable="true" />
+            android:dropDownWidth="fill_parent"
+            android:singleLine="true"
+            android:ellipsize="marquee"
+            android:popupBackground="#ffe2e3e8"
+            android:textColor="#ff0e18f3"
+            android:textSize = "20sp"
+            android:dropDownSelector="#ffd9dddf"
+        />
+
 
         <LinearLayout
             android:orientation="horizontal"
