@@ -31,7 +31,7 @@ import inf.ufg.br.muralufg.model.User;
 
 
 /**
- * Created by Marla Aragão.
+ * Created by Marla Aragao.
  */
 public class LoginAsyncTask extends AsyncTask<User, Void, String>{
 
