@@ -9,6 +9,7 @@ public class Curso {
     private String nome;
 
     public Curso() {
+		
     }
 
     public Curso(int id, String nome) {
