@@ -1,5 +1,4 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
-apply plugin: 'android'
 
 buildscript {
     repositories {
@@ -21,10 +20,3 @@ allprojects {
         jcenter()
     }
 }
-android {
-    compileSdkVersion 21
-    buildToolsVersion "21.1.2"
-      lintOptions {
-          abortOnError false
-      }
-  }
