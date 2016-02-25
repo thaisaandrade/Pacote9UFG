@@ -22,7 +22,7 @@ import inf.ufg.br.muralufg.model.Curso;
 public class ConsultCurso extends AsyncTask<Void, Void, List<Curso>> {
 
     private ConsultCursoSituation listenerSituation;
-    private final String URL_CONNECTION = "https://dl.dropboxusercontent.com/s/mologtlfcosag0n/oportunidades.json?dl=0"; //"https://dl.dropboxusercontent.com/s/ahjbm4a1qlhg0z9/oportunidades.json";
+    private static final String URL_CONNECTION = "https://dl.dropboxusercontent.com/s/mologtlfcosag0n/oportunidades.json?dl=0"; //"https://dl.dropboxusercontent.com/s/ahjbm4a1qlhg0z9/oportunidades.json";
     private List<Curso> cursos= new ArrayList<>();
 
     public ConsultCurso(ConsultCursoSituation listenerSituation) {
