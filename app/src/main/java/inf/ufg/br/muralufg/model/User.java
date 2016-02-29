@@ -8,7 +8,7 @@ public class User {
     private String curso;
 
     public User(){
-
+        //Construtor
     }
     public User(String name) {
         this.name = name;

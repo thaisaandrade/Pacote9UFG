@@ -21,6 +21,7 @@ public class Oportunidade implements Serializable {
     private String horario;
 
     public Oportunidade() {
+        //Construtor
     }
 
     public Oportunidade(int id, String horas, String titulo, String cidade

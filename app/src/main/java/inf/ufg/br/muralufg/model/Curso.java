@@ -9,7 +9,7 @@ public class Curso {
     private String nome;
 
     public Curso(){
-
+        //Construtor
     }
 
     public Curso(int id, String nome) {
