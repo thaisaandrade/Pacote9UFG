@@ -96,7 +96,7 @@ public class ConsultCurso extends AsyncTask<Void, Void, List<Curso>> {
             }
         }
 
-        return null;
+        return cursos;
     }
 
 
