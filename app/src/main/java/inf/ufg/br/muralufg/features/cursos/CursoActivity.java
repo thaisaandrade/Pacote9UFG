@@ -29,18 +29,15 @@ public class CursoActivity extends FragmentActivity implements ConsultCurso.Cons
 
         spinner_cursos = (Spinner) findViewById(R.id.cursos);
 
-        ArrayAdapter<Curso> dataAdapter = new ArrayAdapter<Curso>(this,
-                android.R.layout.simple_spinner_item, cursos);
+        ArrayAdapter<Curso> dataAdapter = new ArrayAdapter<>(this,android.R.layout.simple_spinner_item, cursos);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner_cursos.setAdapter(dataAdapter);
     }
 
-    public void addListenerOnSpinnerItemSelection() {
-
-    }
 
     @Override
     public void onConcludeConsultCurso(List<Curso> cursos) {
+
         addItemsOnSpinner(cursos);
     }
 }

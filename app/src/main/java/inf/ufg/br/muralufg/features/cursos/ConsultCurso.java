@@ -83,7 +83,7 @@ public class ConsultCurso extends AsyncTask<Void, Void, List<Curso>> {
 
             stream.close();
         }catch (IOException e){
-            return null;
+            return (List<Curso>) e;
         }catch (Exception e) {
             e.printStackTrace();
         } finally {
