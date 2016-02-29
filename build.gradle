@@ -30,7 +30,6 @@ sourceSets {
 }
 
 dependencies {
-	...
 	testLocalCompile 'junit:junit:4.10'
 	testLocalCompile 'org.mockito:mockito-core:1.9.5'
 }
