@@ -43,6 +43,7 @@ public class MainActivity extends ActionBarActivity implements WebInterface, Log
 
     private static final int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
     private static final String TAG = "MainActivity";
+    private static final String CURSO = "curso";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -139,7 +140,7 @@ public class MainActivity extends ActionBarActivity implements WebInterface, Log
 
     @Override
     public void handleResponse(Object object) {
-      
+
     }
 
     public void searchVisitante(View v){
@@ -148,7 +149,7 @@ public class MainActivity extends ActionBarActivity implements WebInterface, Log
             Intent intent = new Intent(this, SearchActivity.class);
             intent.putExtra("titulo", (String) "Mural UFG");
 
-            String lastSearch = getSharedPreferences("curso", Context.MODE_PRIVATE).getString("curso", "");
+            String lastSearch = getSharedPreferences(CURSO, Context.MODE_PRIVATE).getString(CURSO, "");
 
             intent.putExtra("curso", lastSearch);
 
