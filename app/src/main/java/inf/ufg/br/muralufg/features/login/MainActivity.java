@@ -139,14 +139,7 @@ public class MainActivity extends ActionBarActivity implements WebInterface, Log
 
     @Override
     public void handleResponse(Object object) {
-        /*ringProgressDialog.dismiss();
-        Log.d("RESPONSE", (String) object);
-
-        Intent intent = new Intent(this, SearchActivity.class);
-        intent.putExtra("titulo", (String) "Mural UFG");
-        String lastSearch = getSharedPreferences("lastSearch", Context.MODE_PRIVATE).getString("curso", "");
-        intent.putExtra("curso", (String) lastSearch);
-        startActivity(intent);*/
+      
     }
 
     public void searchVisitante(View v){
