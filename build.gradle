@@ -24,8 +24,8 @@ allprojects {
 //Trying to implement unit tests
 sourceSets {
 	testLocal {
-		java.srcDir file('src/test/java')
-		resources.srcDir file('src/test/res')
+		java.srcDir file('src/androidTest/java')
+		resources.srcDir file('src/androidTest/res')
 	}
 }
 
