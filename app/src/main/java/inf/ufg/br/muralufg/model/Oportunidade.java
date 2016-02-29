@@ -20,9 +20,7 @@ public class Oportunidade implements Serializable {
     private String descricao;
     private String horario;
 
-    public Oportunidade() {
-    }
-
+  
     public Oportunidade(int id, String horas, String titulo, String cidade
             , String bolsa, String valor, String local, String endereco
             , String telefone, String email, String descricao, String horario) {

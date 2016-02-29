@@ -8,8 +8,6 @@ public class Curso {
     private int id;
     private String nome;
 
-    public Curso() {
-    }
 
     public Curso(int id, String nome) {
         this.id = id;
