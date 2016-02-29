@@ -22,7 +22,7 @@ import inf.ufg.br.muralufg.model.Curso;
 public class ConsultCurso extends AsyncTask<Void, Void, List<Curso>> {
 
     private ConsultCursoSituation listenerSituation;
-    private static final String URL_CONNECTION = "https://dl.dropboxusercontent.com/s/mologtlfcosag0n/oportunidades.json?dl=0"; //"https://dl.dropboxusercontent.com/s/ahjbm4a1qlhg0z9/oportunidades.json";
+    private static final String URL_CONNECTION = "https://dl.dropboxusercontent.com/s/mologtlfcosag0n/oportunidades.json?dl=0";
     private List<Curso> cursos= new ArrayList<>();
 
     public ConsultCurso(ConsultCursoSituation listenerSituation) {
@@ -41,8 +41,7 @@ public class ConsultCurso extends AsyncTask<Void, Void, List<Curso>> {
 
         InputStream is = null;
         // Only display the first 500 characters of the retrieved
-        // web page content.
-        int len = 500;
+        // web page content..
 
         try {
 
