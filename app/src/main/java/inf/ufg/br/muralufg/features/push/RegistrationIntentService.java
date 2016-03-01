@@ -91,7 +91,7 @@ public class RegistrationIntentService extends IntentService {
      */
     private void sendRegistrationToServer(String token) {
         // Add custom implementation, as needed.
-    }
+   }
 
     /**
      * Subscribe to any GCM topics of interest, as defined by the TOPICS constant.
