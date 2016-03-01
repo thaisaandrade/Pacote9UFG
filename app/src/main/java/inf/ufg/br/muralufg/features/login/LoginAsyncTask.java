@@ -77,7 +77,7 @@ public class LoginAsyncTask extends AsyncTask<User, Void, String>{
                     User w = new User();
                     w.setName(((JSONObject) cursosArray.get(i)).getString("usuario"));
                     w.setPassword(((JSONObject) cursosArray.get(i)).getString("senha"));
-                    w.setCurso((((JSONObject) cursosArray.get(i)).getString("curso")));
+                    w.setCurso(((JSONObject) cursosArray.get(i)).getString("curso"));
 
                     if (user.getName().equals(w.getName()) && user.getPassword().equals(w.getPassword())) {
                         this.responseCode = 200;
