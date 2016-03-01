@@ -2,15 +2,6 @@ package inf.ufg.br.muralufg.features.login;
 
 import android.os.AsyncTask;
 
-import org.apache.http.HttpResponse;
-import org.apache.http.NameValuePair;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.message.BasicNameValuePair;
-import org.apache.http.params.BasicHttpParams;
-import org.apache.http.params.HttpConnectionParams;
-import org.apache.http.params.HttpParams;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -22,11 +13,7 @@ import java.io.Reader;
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 
-import inf.ufg.br.muralufg.model.Oportunidade;
-import inf.ufg.br.muralufg.utils.WebInterface;
 import inf.ufg.br.muralufg.model.User;
 
 
@@ -37,7 +24,7 @@ public class LoginAsyncTask extends AsyncTask<User, Void, String>{
 
     private ConsultLogin listenerSituation;
     private User user;
-    private final String CONNECTION_URL = "https://dl.dropboxusercontent.com/s/faecpt800whqwo8/login.json?dl=0";
+    private final static String CONNECTION_URL = "https://dl.dropboxusercontent.com/s/faecpt800whqwo8/login.json?dl=0";
     private int responseCode;
 
 
