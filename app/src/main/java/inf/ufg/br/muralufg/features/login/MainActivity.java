@@ -138,11 +138,6 @@ public class MainActivity extends ActionBarActivity implements WebInterface, Log
         showError(error);
     }
 
-    @Override
-    public void handleResponse(Object object) {
-
-    }
-
     public void searchVisitante(View v){
         int id = v.getId();
         if(id == R.id.button2){
