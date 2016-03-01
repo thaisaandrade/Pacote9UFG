@@ -35,7 +35,6 @@ import inf.ufg.br.muralufg.model.User;
  */
 public class LoginAsyncTask extends AsyncTask<User, Void, String>{
 
- 
     private ConsultLogin listenerSituation;
     private User user;
     private final String CONNECTION_URL = "https://dl.dropboxusercontent.com/s/faecpt800whqwo8/login.json?dl=0";
@@ -51,7 +50,6 @@ public class LoginAsyncTask extends AsyncTask<User, Void, String>{
 
         user = params[0];
         InputStream is = null;
-        int len = 500;
 
         try {
 
