@@ -141,7 +141,7 @@ public class  SearchActivity extends ActionBarActivity
                     estagio.setChecked(true);
                 }
 
-                List<Object> objetos = new ArrayList<Object>();
+                List<Object> objetos = new ArrayList<>();
                 objetos.add(curso);
 
                 if(opcoes.getCheckedRadioButtonId() == estagio.getId()) {
@@ -180,7 +180,7 @@ public class  SearchActivity extends ActionBarActivity
         adapter = new SearchAdapter(this, oportunidades);
         rv.setAdapter(adapter);
 
-        if (oportunidades == null || oportunidades.size() == 0) {
+        if (oportunidades == null || oportunidades.isEmpty()) {
             Toast.makeText(this, "Nenhuma oportunidade encontrada", Toast.LENGTH_LONG).show();
 
         }

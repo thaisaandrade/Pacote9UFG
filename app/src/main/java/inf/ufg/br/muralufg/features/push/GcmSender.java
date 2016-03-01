@@ -82,8 +82,7 @@ public class GcmSender {
                     "confirmation of the receipt of the GCM message.");
         } catch (IOException e) {
             System.out.println("Unable to send GCM message.");
-            System.out.println("Please ensure that API_KEY has been replaced by the server " +
-                    "API key, and that the device's registration token is correct (if specified).");
+            System.out.print("Please ensure that API_KEY has been replaced by the server " + "API key, and that the device's registration token is correct (if specified).");
             e.printStackTrace();
         } catch (JSONException e) {
             e.printStackTrace();
