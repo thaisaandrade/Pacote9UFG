@@ -24,7 +24,7 @@ import inf.ufg.br.muralufg.model.Oportunidade;
 public class ConsultOportunidades extends AsyncTask<Object, Void, List<Oportunidade>> {
 
     private ConsultOportunidadeSituation listenerSituation;
-    private final String URL_CONNECTION = "https://dl.dropboxusercontent.com/s/mologtlfcosag0n/oportunidades.json?dl=0"; //"https://dl.dropboxusercontent.com/s/ahjbm4a1qlhg0z9/oportunidades.json";
+    private final static String URL_CONNECTION = "https://dl.dropboxusercontent.com/s/mologtlfcosag0n/oportunidades.json?dl=0"; ;
     private List<Oportunidade> oportunidades = new ArrayList<>();
 
     public ConsultOportunidades(ConsultOportunidadeSituation listenerSituation) {
