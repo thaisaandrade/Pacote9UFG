@@ -33,7 +33,7 @@ import inf.ufg.br.muralufg.R;
 
 public class RegistrationIntentService extends IntentService {
 
-    private static final String TAG = "RegIntentService";
+    private static final String TAG = new String("RegIntentService");
     private static final String[] TOPICS = {"global"};
 
     public RegistrationIntentService() {
