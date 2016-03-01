@@ -35,7 +35,6 @@ import inf.ufg.br.muralufg.model.User;
  */
 public class LoginAsyncTask extends AsyncTask<User, Void, String>{
 
- 
     private ConsultLogin listenerSituation;
     private User user;
     private final String CONNECTION_URL = "https://dl.dropboxusercontent.com/s/faecpt800whqwo8/login.json?dl=0";
@@ -51,7 +50,6 @@ public class LoginAsyncTask extends AsyncTask<User, Void, String>{
 
         user = params[0];
         InputStream is = null;
-        int len = 500;
 
         try {
 
@@ -79,7 +77,7 @@ public class LoginAsyncTask extends AsyncTask<User, Void, String>{
                     User w = new User();
                     w.setName(((JSONObject) cursosArray.get(i)).getString("usuario"));
                     w.setPassword(((JSONObject) cursosArray.get(i)).getString("senha"));
-                    w.setCurso((((JSONObject) cursosArray.get(i)).getString("curso")));
+                    w.setCurso(((JSONObject) cursosArray.get(i)).getString("curso"));
 
                     if (user.getName().equals(w.getName()) && user.getPassword().equals(w.getPassword())) {
                         this.responseCode = 200;
@@ -110,40 +108,6 @@ public class LoginAsyncTask extends AsyncTask<User, Void, String>{
 
         return null;
 
-        /*try {
-
-            HttpPost post = new HttpPost(CONNECTION_URL);
-            HttpParams httpParameters = new BasicHttpParams();
-            int timeoutConnection = TIMEOUT;
-            HttpConnectionParams.setConnectionTimeout(httpParameters, timeoutConnection);
-            HttpClient client = new DefaultHttpClient(httpParameters);
-
-            List<NameValuePair> pairs = new ArrayList<NameValuePair>();
-            pairs.add(new BasicNameValuePair("usuario", user.getName()));
-            pairs.add(new BasicNameValuePair("senha", user.getPassword()));
-            pairs.add(new BasicNameValuePair("curso", String.valueOf(user.getCurso())));
-
-            HttpResponse response = client.execute(post);
-
-            responseCode = response.getStatusLine().getStatusCode();
-
-            is = response.getEntity().getContent();
-            // Convert the InputStream into a string
-            String contentAsString = readIt(is, len);
-
-            return contentAsString;
-
-        }catch (IOException e){
-            return e.getMessage();
-        } finally {
-            if (is != null) {
-                try {
-                    is.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }*/
     }
 
     public String readIt(InputStream stream, int len) throws IOException, UnsupportedEncodingException {
