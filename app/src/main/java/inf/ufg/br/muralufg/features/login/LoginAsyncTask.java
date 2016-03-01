@@ -35,14 +35,12 @@ import inf.ufg.br.muralufg.model.User;
  */
 public class LoginAsyncTask extends AsyncTask<User, Void, String>{
 
-    public static final int TIMEOUT = 10000;
+ 
     private ConsultLogin listenerSituation;
-    private final int SUCCESS = 200;
     private User user;
     private final String CONNECTION_URL = "https://dl.dropboxusercontent.com/s/faecpt800whqwo8/login.json?dl=0";
-    private WebInterface handler;
     private int responseCode;
-    private String returnToken;
+
 
     public LoginAsyncTask(ConsultLogin listenerSituation) {
         this.listenerSituation = listenerSituation;
