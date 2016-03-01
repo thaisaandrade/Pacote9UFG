@@ -19,7 +19,6 @@ package inf.ufg.br.muralufg.features.push;
 public class QuickstartPreferences {
 
     public QuickstartPreferences(){
-        //Construtor
     }
 
     public static final String SENT_TOKEN_TO_SERVER = "sentTokenToServer";
