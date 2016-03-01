@@ -87,7 +87,7 @@ public class ConsultCurso extends AsyncTask<Void, Void, List<Curso>> {
         }catch (IOException e){
             return (List<Curso>) e;
         }catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.info(e);
         } finally {
             if (is != null) {
                 try {
