@@ -24,7 +24,7 @@ public class LoginAsyncTask extends AsyncTask<User, Void, String>{
 
     private ConsultLogin listenerSituation;
     private User user;
-    private final static String CONNECTION_URL = "https://dl.dropboxusercontent.com/s/faecpt800whqwo8/login.json?dl=0";
+    private static final String CONNECTION_URL = "https://dl.dropboxusercontent.com/s/faecpt800whqwo8/login.json?dl=0";
     private int responseCode;
 
 
