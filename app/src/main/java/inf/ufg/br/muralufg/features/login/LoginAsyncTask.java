@@ -108,40 +108,6 @@ public class LoginAsyncTask extends AsyncTask<User, Void, String>{
 
         return null;
 
-        /*try {
-
-            HttpPost post = new HttpPost(CONNECTION_URL);
-            HttpParams httpParameters = new BasicHttpParams();
-            int timeoutConnection = TIMEOUT;
-            HttpConnectionParams.setConnectionTimeout(httpParameters, timeoutConnection);
-            HttpClient client = new DefaultHttpClient(httpParameters);
-
-            List<NameValuePair> pairs = new ArrayList<NameValuePair>();
-            pairs.add(new BasicNameValuePair("usuario", user.getName()));
-            pairs.add(new BasicNameValuePair("senha", user.getPassword()));
-            pairs.add(new BasicNameValuePair("curso", String.valueOf(user.getCurso())));
-
-            HttpResponse response = client.execute(post);
-
-            responseCode = response.getStatusLine().getStatusCode();
-
-            is = response.getEntity().getContent();
-            // Convert the InputStream into a string
-            String contentAsString = readIt(is, len);
-
-            return contentAsString;
-
-        }catch (IOException e){
-            return e.getMessage();
-        } finally {
-            if (is != null) {
-                try {
-                    is.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }*/
     }
 
     public String readIt(InputStream stream, int len) throws IOException, UnsupportedEncodingException {
