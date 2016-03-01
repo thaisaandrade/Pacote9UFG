@@ -78,13 +78,13 @@ public class ConsultCurso extends AsyncTask<Void, Void, List<Curso>> {
                 return cursos;
 
             } catch (JSONException e) {
-                e.printStackTrace();
                 LOGGER.info(e);
             }
 
 
             stream.close();
         }catch (IOException e){
+            LOGGER.info(e);
             return (List<Curso>) e;
         }catch (Exception e) {
             LOGGER.info(e);
