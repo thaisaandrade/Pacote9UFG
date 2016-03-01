@@ -14,7 +14,7 @@ import java.util.List;
  */
 public class CursoActivity extends FragmentActivity implements ConsultCurso.ConsultCursoSituation {
 
-    private Spinner spinner_cursos;
+    private Spinner spinnerCursos;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -27,11 +27,11 @@ public class CursoActivity extends FragmentActivity implements ConsultCurso.Cons
     // add items into spinner dynamically
     public void addItemsOnSpinner(List<Curso> cursos) {
 
-        spinner_cursos = (Spinner) findViewById(R.id.cursos);
+        spinnerCursos = (Spinner) findViewById(R.id.cursos);
 
         ArrayAdapter<Curso> dataAdapter = new ArrayAdapter<>(this,android.R.layout.simple_spinner_item, cursos);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner_cursos.setAdapter(dataAdapter);
+        spinnerCursos.setAdapter(dataAdapter);
     }
 
 
