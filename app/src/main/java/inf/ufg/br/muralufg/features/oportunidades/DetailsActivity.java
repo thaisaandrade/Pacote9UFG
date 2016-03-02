@@ -93,7 +93,7 @@ public class DetailsActivity extends ActionBarActivity {
         titulo.setText(oportunidade.getTitulo().toUpperCase());
         descricao.setText("Descrição: " + oportunidade.getDescricao());
         cidade.setText("Cidade: " + oportunidade.getCidade().toUpperCase());
-        bolsa.setText("Bolsa: " + (oportunidade.getBolsa().equals("S") ? "Possui" : "Não possui"));
+        bolsa.setText("Bolsa: " + ("S".equals(oportunidade.getBolsa()) ? "Possui" : "Não possui"));
         valor.setText("Valor da bolsa: R$ " + oportunidade.getValor());
         local.setText("Empresa/Instituição: " + oportunidade.getLocal());
         endereco.setText("Endereço: " + oportunidade.getEndereco());
