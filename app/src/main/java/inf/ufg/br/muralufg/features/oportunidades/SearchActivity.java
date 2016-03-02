@@ -97,7 +97,6 @@ public class  SearchActivity extends ActionBarActivity
         spinnerCursos = (Spinner) findViewById(R.id.cursos);
 
         final CursoAdapter dataAdapter = new CursoAdapter(this, android.R.layout.simple_spinner_dropdown_item, cursos);
-       // dataAdapter.setDropDownViewResource(R.layout.spinner_item);
 
         spinnerCursos.setAdapter(dataAdapter);
 
