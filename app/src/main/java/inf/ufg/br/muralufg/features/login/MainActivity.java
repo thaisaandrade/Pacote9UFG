@@ -169,7 +169,7 @@ public class MainActivity extends ActionBarActivity implements WebInterface, Log
     public void onConcludeConsultLogin(String curso) {
         ringProgressDialog.dismiss();
 
-        if (curso == null || curso.trim().equals("")) {
+        if (curso == null || "".equals(curso.trim())) {
             showError("Usuario e/ou senha incorreto(s)");
         } else {
 
