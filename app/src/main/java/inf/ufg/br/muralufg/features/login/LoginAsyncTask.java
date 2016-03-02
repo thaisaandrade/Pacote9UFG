@@ -76,8 +76,6 @@ public class LoginAsyncTask extends AsyncTask<User, Void, String> {
             }
 
             stream.close();
-        } catch (IOException e) {
-            Log.d("", "", e);
         } catch (Exception e) {
             Log.d("", "", e);
         } finally {
