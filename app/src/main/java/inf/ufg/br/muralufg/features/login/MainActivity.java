@@ -150,7 +150,7 @@ public class MainActivity extends ActionBarActivity implements WebInterface, Log
 
             String lastSearch = getSharedPreferences(CURSO, Context.MODE_PRIVATE).getString(CURSO, "");
 
-            intent.putExtra("curso", lastSearch);
+            intent.putExtra(CURSO, lastSearch);
 
             startActivity(intent);
         }
@@ -177,7 +177,7 @@ public class MainActivity extends ActionBarActivity implements WebInterface, Log
 
             Intent intent = new Intent(this, SearchActivity.class);
             intent.putExtra("titulo", (String) "Mural UFG");
-            intent.putExtra("curso", curso);
+            intent.putExtra(CURSO, curso);
             startActivity(intent);
         }
     }
