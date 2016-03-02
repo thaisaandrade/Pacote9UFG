@@ -45,7 +45,7 @@ public class ConsultOportunidades extends AsyncTask<Object, Void, List<Oportunid
             return this.oportunidades;
         }
 
-        return null;
+        return this.oportunidades;
     }
 
     private List<Oportunidade> consultServer(Curso curso, String opcao) {
@@ -54,6 +54,7 @@ public class ConsultOportunidades extends AsyncTask<Object, Void, List<Oportunid
         // Only display the first 500 characters of the retrieved
         // web page content.
         int len = 500;
+        List<Oportunidade> oportunidades = new ArrayList<>();
 
         try {
 
@@ -72,7 +73,7 @@ public class ConsultOportunidades extends AsyncTask<Object, Void, List<Oportunid
 
             try {
 
-                List<Oportunidade> oportunidades = new ArrayList<>();
+                
                 JSONObject reader = new JSONObject(data);
 
                 JSONArray cursosArray  = reader.getJSONArray("cursos");
@@ -129,7 +130,7 @@ public class ConsultOportunidades extends AsyncTask<Object, Void, List<Oportunid
             }
         }
 
-        return null;
+        return oportunidades;
     }
 
 
