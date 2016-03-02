@@ -27,6 +27,8 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import android.util.Log;
+
 public class GcmSender {
 
     public static final String API_KEY = "AIzaSyCqgKyW_W2EtGBo9lzLxWqH6jiBmyetREk";
@@ -83,9 +85,9 @@ public class GcmSender {
         } catch (IOException e) {
             System.out.println("Unable to send GCM message.");
             System.out.print("Please ensure that API_KEY has been replaced by the server " + "API key, and that the device's registration token is correct (if specified).");
-            e.printStackTrace();
+            Log.d("", "", e);
         } catch (JSONException e) {
-            e.printStackTrace();
+            Log.d("", "", e);
         }
     }
 
