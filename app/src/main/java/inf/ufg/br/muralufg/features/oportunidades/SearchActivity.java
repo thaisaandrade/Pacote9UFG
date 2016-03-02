@@ -187,7 +187,9 @@ public class  SearchActivity extends ActionBarActivity
                 editor.putString(CURSO, String.valueOf(curso.getId()));
                 editor.commit();
 
-                if (opcoes.getCheckedRadioButtonId() == -1) { estagio.setChecked(true); }
+                if (opcoes.getCheckedRadioButtonId() == -1) { 
+                        estagio.setChecked(true); 
+                }
                 List<Object> objetos = new ArrayList<>();
                 objetos.add(curso);
 
