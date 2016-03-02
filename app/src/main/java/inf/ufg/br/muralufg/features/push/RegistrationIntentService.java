@@ -33,7 +33,7 @@ import inf.ufg.br.muralufg.R;
 
 public class RegistrationIntentService extends IntentService {
 
-    private static final Object TAG = new Object();
+    private static final String TAG = new String("RegIntentService");
     private static final String[] TOPICS = {"global"};
 
     public RegistrationIntentService() {
@@ -56,7 +56,7 @@ public class RegistrationIntentService extends IntentService {
                 String token = instanceID.getToken(getString(R.string.gcm_defaultSenderId),
                         GoogleCloudMessaging.INSTANCE_ID_SCOPE, null);
                 // [END get_token]
-                Log.i("RegIntentService", "GCM Registration Token: " + token);
+                Log.i(TAG, "GCM Registration Token: " + token);
 
                 sendRegistrationToServer(token);
 
