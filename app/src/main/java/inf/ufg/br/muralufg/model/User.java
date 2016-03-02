@@ -7,9 +7,10 @@ public class User {
     private String password;
     private String curso;
 
-    public User(){
+    public User() {
         //Construtor
     }
+
     public User(String name) {
         this.name = name;
     }

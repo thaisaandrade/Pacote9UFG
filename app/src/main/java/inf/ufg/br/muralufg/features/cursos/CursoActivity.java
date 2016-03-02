@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+
 import inf.ufg.br.muralufg.R;
 import inf.ufg.br.muralufg.model.Curso;
 
@@ -29,7 +30,7 @@ public class CursoActivity extends FragmentActivity implements ConsultCurso.Cons
 
         spinnerCursos = (Spinner) findViewById(R.id.cursos);
 
-        ArrayAdapter<Curso> dataAdapter = new ArrayAdapter<>(this,android.R.layout.simple_spinner_item, cursos);
+        ArrayAdapter<Curso> dataAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, cursos);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerCursos.setAdapter(dataAdapter);
     }

@@ -58,19 +58,19 @@ public class DetailsActivity extends ActionBarActivity {
         setContentView(R.layout.activity_datails);
         getSupportActionBar().setTitle("Mural UFG");
 
-        this.oportunidade = (Oportunidade)getIntent().getSerializableExtra("oportunidade");
+        this.oportunidade = (Oportunidade) getIntent().getSerializableExtra("oportunidade");
 
-        horas = (TextView)findViewById(R.id.horas_details);
-        titulo = (TextView)findViewById(R.id.titulo_details);
-        descricao = (TextView)findViewById(R.id.descricao_details);
-        cidade = (TextView)findViewById(R.id.cidade_details);
-        bolsa = (TextView)findViewById(R.id.bolsa_details);
-        horario = (TextView)findViewById(R.id.horario_details);
-        valor = (TextView)findViewById(R.id.valor_details);
-        local = (TextView)findViewById(R.id.local_details);
-        endereco = (TextView)findViewById(R.id.endereco_details);
+        horas = (TextView) findViewById(R.id.horas_details);
+        titulo = (TextView) findViewById(R.id.titulo_details);
+        descricao = (TextView) findViewById(R.id.descricao_details);
+        cidade = (TextView) findViewById(R.id.cidade_details);
+        bolsa = (TextView) findViewById(R.id.bolsa_details);
+        horario = (TextView) findViewById(R.id.horario_details);
+        valor = (TextView) findViewById(R.id.valor_details);
+        local = (TextView) findViewById(R.id.local_details);
+        endereco = (TextView) findViewById(R.id.endereco_details);
         telefone = (Button) findViewById(R.id.telefone_details);
-        email = (TextView)findViewById(R.id.email_details);
+        email = (TextView) findViewById(R.id.email_details);
 
         // add PhoneStateListener
         PhoneStateListener phoneListener = new PhoneStateListener();
@@ -101,7 +101,7 @@ public class DetailsActivity extends ActionBarActivity {
         email.setText("Email: " + Html.fromHtml("<a href=\"" + oportunidade.getEmail() + "\">" + oportunidade.getEmail() + "</a>"));
 
 
-        ShareButton shareButton = (ShareButton)findViewById(R.id.fb_share_button);
+        ShareButton shareButton = (ShareButton) findViewById(R.id.fb_share_button);
         Bitmap image = takeScreenShot(this);
         SharePhoto photo = new SharePhoto.Builder()
                 .setBitmap(image)
@@ -113,8 +113,7 @@ public class DetailsActivity extends ActionBarActivity {
 
     }
 
-    private static Bitmap takeScreenShot(Activity activity)
-    {
+    private static Bitmap takeScreenShot(Activity activity) {
         View v = activity.getWindow().getDecorView();
 
         v.setDrawingCacheEnabled(true);

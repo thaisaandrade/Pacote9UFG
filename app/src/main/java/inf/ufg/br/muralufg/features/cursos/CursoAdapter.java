@@ -21,21 +21,21 @@ public class CursoAdapter extends ArrayAdapter<Curso> {
     private List<Curso> values;
 
     public CursoAdapter(Context context, int textViewResourceId,
-                       List<Curso> values) {
+                        List<Curso> values) {
         super(context, textViewResourceId, values);
         this.context = context;
         this.values = values;
     }
 
-    public int getCount(){
+    public int getCount() {
         return values.size();
     }
 
-    public Curso getItem(int position){
+    public Curso getItem(int position) {
         return values.get(position);
     }
 
-    public Curso getItemById(int id){
+    public Curso getItemById(int id) {
 
         for (Curso c : values) {
             if (c.getId() == id) {
@@ -46,7 +46,7 @@ public class CursoAdapter extends ArrayAdapter<Curso> {
         return null;
     }
 
-    public long getItemId(int position){
+    public long getItemId(int position) {
         return position;
     }
 
@@ -77,5 +77,5 @@ public class CursoAdapter extends ArrayAdapter<Curso> {
 
         return label;
     }
-    
+
 }

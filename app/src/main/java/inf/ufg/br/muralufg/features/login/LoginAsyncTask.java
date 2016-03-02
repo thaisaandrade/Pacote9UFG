@@ -21,7 +21,7 @@ import inf.ufg.br.muralufg.model.User;
 /**
  * Created by Marla Aragao.
  */
-public class LoginAsyncTask extends AsyncTask<User, Void, String>{
+public class LoginAsyncTask extends AsyncTask<User, Void, String> {
 
     private ConsultLogin listenerSituation;
     private User user;
@@ -55,30 +55,30 @@ public class LoginAsyncTask extends AsyncTask<User, Void, String>{
             try {
 
                 JSONObject reader = new JSONObject(data);
-    
-                JSONArray cursosArray  = reader.getJSONArray("users");
-    
+
+                JSONArray cursosArray = reader.getJSONArray("users");
+
                 for (int i = 0; i < cursosArray.length(); i++) {
-    
+
                     User w = new User();
                     w.setName(((JSONObject) cursosArray.get(i)).getString("usuario"));
                     w.setPassword(((JSONObject) cursosArray.get(i)).getString("senha"));
                     w.setCurso(((JSONObject) cursosArray.get(i)).getString("curso"));
-    
+
                     if (user.getName().equals(w.getName()) && user.getPassword().equals(w.getPassword())) {
                         return w.getCurso();
                     }
-    
+
                 }
-                
+
             } catch (JSONException e) {
                 Log.d("", "", e);
             }
 
             stream.close();
-        }catch (IOException e){
+        } catch (IOException e) {
             Log.d("", "", e);
-        }catch (Exception e) {
+        } catch (Exception e) {
             Log.d("", "", e);
         } finally {
             if (is != null) {

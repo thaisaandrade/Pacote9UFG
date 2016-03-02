@@ -72,18 +72,18 @@ public class ConsultOportunidades extends AsyncTask<Object, Void, List<Oportunid
 
             try {
 
-                
+
                 JSONObject reader = new JSONObject(data);
 
-                JSONArray cursosArray  = reader.getJSONArray("cursos");
+                JSONArray cursosArray = reader.getJSONArray("cursos");
 
                 for (int i = 0; i < cursosArray.length(); i++) {
 
-                    if (curso != null && (curso.getId() != ((JSONObject)cursosArray.get(i)).getInt("id"))) {
+                    if (curso != null && (curso.getId() != ((JSONObject) cursosArray.get(i)).getInt("id"))) {
                         continue;
                     }
 
-                    JSONArray oportunityInformation = ((JSONObject)cursosArray.get(i)).getJSONObject("oportunidades").getJSONArray(opcao);
+                    JSONArray oportunityInformation = ((JSONObject) cursosArray.get(i)).getJSONObject("oportunidades").getJSONArray(opcao);
 
                     for (int j = 0; j < oportunityInformation.length(); j++) {
 
@@ -113,10 +113,10 @@ public class ConsultOportunidades extends AsyncTask<Object, Void, List<Oportunid
 
 
             stream.close();
-        }catch (IOException e){
-           Log.d("", "", e);
-        }catch (Exception e) {
-           Log.d("", "", e);
+        } catch (IOException e) {
+            Log.d("", "", e);
+        } catch (Exception e) {
+            Log.d("", "", e);
         } finally {
             if (is != null) {
                 try {

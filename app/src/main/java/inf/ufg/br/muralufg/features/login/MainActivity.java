@@ -77,11 +77,11 @@ public class MainActivity extends ActionBarActivity implements WebInterface, Log
 
     }
 
-    public void login(View v){
+    public void login(View v) {
         checkFields();
-        if(!isNetworkAvailable()){
+        if (!isNetworkAvailable()) {
             showError(getResources().getString(R.string.warning_internet));
-        }else{
+        } else {
             LoginAsyncTask servico = new LoginAsyncTask(this);
             EditText entradaUsuario = (EditText)
                     findViewById(R.id.entrada_nome);
@@ -101,15 +101,15 @@ public class MainActivity extends ActionBarActivity implements WebInterface, Log
         }
     }
 
-    public void checkFields(){
+    public void checkFields() {
         EditText entradaUsuario = (EditText)
                 findViewById(R.id.entrada_nome);
-        if(entradaUsuario.getText() == null || "".equals(entradaUsuario.getText().toString())){
+        if (entradaUsuario.getText() == null || "".equals(entradaUsuario.getText().toString())) {
             entradaUsuario.setError(getResources().getString(R.string.warning_empty_username));
             return;
         }
         EditText entradaSenha = (EditText) findViewById(R.id.entrada_password);
-        if(entradaSenha.getText() == null || "".equals(entradaSenha.getText().toString())){
+        if (entradaSenha.getText() == null || "".equals(entradaSenha.getText().toString())) {
             entradaSenha.setError(getResources().getString(R.string.warning_empty_password));
             return;
         }
@@ -126,7 +126,7 @@ public class MainActivity extends ActionBarActivity implements WebInterface, Log
         return false;
     }
 
-    public void showError(String error){
+    public void showError(String error) {
         Toast.makeText(this, error,
                 Toast.LENGTH_LONG).show();
     }
@@ -136,15 +136,15 @@ public class MainActivity extends ActionBarActivity implements WebInterface, Log
         ringProgressDialog.dismiss();
         showError(error);
     }
-    
+
     @Override
     public void handleResponse(Object object) {
         //overrides abstract method handleResponse(Object) in WebInterface
     }
 
-    public void searchVisitante(View v){
+    public void searchVisitante(View v) {
         int id = v.getId();
-        if(id == R.id.button2){
+        if (id == R.id.button2) {
             Intent intent = new Intent(this, SearchActivity.class);
             intent.putExtra("titulo", (String) "Mural UFG");
 
@@ -160,7 +160,7 @@ public class MainActivity extends ActionBarActivity implements WebInterface, Log
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        if(ringProgressDialog != null && ringProgressDialog.isShowing()){
+        if (ringProgressDialog != null && ringProgressDialog.isShowing()) {
             webConnection.cancel(true);
         }
     }

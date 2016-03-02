@@ -17,11 +17,11 @@
 package inf.ufg.br.muralufg.features.push;
 
 public class QuickstartPreferences {
-    
+
     public static final String SENT_TOKEN_TO_SERVER = "sentTokenToServer";
     public static final String REGISTRATION_COMPLETE = "registrationComplete";
-    
-    private QuickstartPreferences(){
+
+    private QuickstartPreferences() {
         //Constructor
     }
 

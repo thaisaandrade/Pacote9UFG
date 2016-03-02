@@ -29,7 +29,7 @@ import inf.ufg.br.muralufg.model.Curso;
 import inf.ufg.br.muralufg.utils.WebInterface;
 
 
-public class  SearchActivity extends ActionBarActivity
+public class SearchActivity extends ActionBarActivity
         implements ConsultCurso.ConsultCursoSituation, ConsultOportunidades.ConsultOportunidadeSituation, WebInterface {
 
     private AsyncTask taskCurso;
@@ -41,7 +41,7 @@ public class  SearchActivity extends ActionBarActivity
     private RadioButton estagio, pesquisa, emprego;
     private SharedPreferences sharedPreferences;
     private String idCurso;
-    
+
     private static final String CURSO = "curso";
 
     @Override
@@ -56,7 +56,7 @@ public class  SearchActivity extends ActionBarActivity
         idCurso = getIntent().getStringExtra(CURSO);
 
 
-        final Spinner s =  (Spinner) findViewById(R.id.cursos);
+        final Spinner s = (Spinner) findViewById(R.id.cursos);
 
         opcoes = (RadioGroup) findViewById(R.id.opoes);
         estagio = (RadioButton) findViewById(R.id.estagio);
@@ -66,24 +66,22 @@ public class  SearchActivity extends ActionBarActivity
         opcoes.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                    List<Object> objetos = new ArrayList<>();
-                    objetos.add(s.getSelectedItem());
-                    if (checkedId == R.id.estagio) { 
-                            objetos.add("estagios"); 
-                    } 
-                    else if (checkedId == R.id.emprego) {
-                            objetos.add("empregos"); 
-                    } 
-                    else if (checkedId == R.id.pesquisa){ 
-                            objetos.add("pesquisas"); 
-                    }
-                    ringProgressDialog = ProgressDialog.show(SearchActivity.this, getResources().getString(R.string.warning_aguarde), getResources().getString(R.string.warning_procurando_oportunidades), true);
-                    ringProgressDialog.show();
-                    new ConsultOportunidades(SearchActivity.this).execute(objetos);
+                List<Object> objetos = new ArrayList<>();
+                objetos.add(s.getSelectedItem());
+                if (checkedId == R.id.estagio) {
+                    objetos.add("estagios");
+                } else if (checkedId == R.id.emprego) {
+                    objetos.add("empregos");
+                } else if (checkedId == R.id.pesquisa) {
+                    objetos.add("pesquisas");
+                }
+                ringProgressDialog = ProgressDialog.show(SearchActivity.this, getResources().getString(R.string.warning_aguarde), getResources().getString(R.string.warning_procurando_oportunidades), true);
+                ringProgressDialog.show();
+                new ConsultOportunidades(SearchActivity.this).execute(objetos);
             }
         });
 
-        rv = (RecyclerView)findViewById(R.id.rv);
+        rv = (RecyclerView) findViewById(R.id.rv);
 
         LinearLayoutManager llm = new LinearLayoutManager(this);
         rv.setLayoutManager(llm);
@@ -110,7 +108,7 @@ public class  SearchActivity extends ActionBarActivity
             int id = 0;
 
             try {
-               id = Integer.parseInt(idCurso);
+                id = Integer.parseInt(idCurso);
             } catch (Exception e) {
                 Log.d("", "", e);
             }
@@ -152,7 +150,7 @@ public class  SearchActivity extends ActionBarActivity
         showError(error);
     }
 
-    public void showError(String error){
+    public void showError(String error) {
         Toast.makeText(this, error,
                 Toast.LENGTH_LONG).show();
     }
@@ -166,50 +164,49 @@ public class  SearchActivity extends ActionBarActivity
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        if(ringProgressDialog.isShowing()){
+        if (ringProgressDialog.isShowing()) {
             taskCurso.cancel(true);
         }
         finish();
     }
-    
+
     class ItemSelectedListener implements AdapterView.OnItemSelectedListener {
-            
-            private CursoAdapter dataAdapter;
-            
-            public ItemSelectedListener(CursoAdapter dataAdapter) {
-                this.dataAdapter = dataAdapter;
-            }
-            
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
-                final Curso curso = (Curso) this.dataAdapter.getItem(position);
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putString(CURSO, String.valueOf(curso.getId()));
-                editor.commit();
 
-                if (opcoes.getCheckedRadioButtonId() == -1) { 
-                        estagio.setChecked(true); 
-                }
-                List<Object> objetos = new ArrayList<>();
-                objetos.add(curso);
+        private CursoAdapter dataAdapter;
 
-                if (opcoes.getCheckedRadioButtonId() == estagio.getId()) { 
-                        objetos.add("estagios"); 
-                } 
-                else if (opcoes.getCheckedRadioButtonId() == emprego.getId()) { 
-                        objetos.add("empregos"); 
-                } 
-                else if (opcoes.getCheckedRadioButtonId() == pesquisa.getId()){ 
-                        objetos.add("pesquisas"); 
-                }
-                
-                ringProgressDialog = ProgressDialog.show(SearchActivity.this, getResources().getString(R.string.warning_aguarde), getResources().getString(R.string.warning_procurando_oportunidades), true);
-                ringProgressDialog.show();
-                new ConsultOportunidades(SearchActivity.this).execute(objetos);
+        public ItemSelectedListener(CursoAdapter dataAdapter) {
+            this.dataAdapter = dataAdapter;
+        }
+
+        @Override
+        public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
+            final Curso curso = (Curso) this.dataAdapter.getItem(position);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString(CURSO, String.valueOf(curso.getId()));
+            editor.commit();
+
+            if (opcoes.getCheckedRadioButtonId() == -1) {
+                estagio.setChecked(true);
             }
-            @Override
-            public void onNothingSelected(AdapterView<?> adapter) {
-                Toast.makeText(SearchActivity.this, "Escolha um curso", Toast.LENGTH_SHORT).show();
+            List<Object> objetos = new ArrayList<>();
+            objetos.add(curso);
+
+            if (opcoes.getCheckedRadioButtonId() == estagio.getId()) {
+                objetos.add("estagios");
+            } else if (opcoes.getCheckedRadioButtonId() == emprego.getId()) {
+                objetos.add("empregos");
+            } else if (opcoes.getCheckedRadioButtonId() == pesquisa.getId()) {
+                objetos.add("pesquisas");
             }
+
+            ringProgressDialog = ProgressDialog.show(SearchActivity.this, getResources().getString(R.string.warning_aguarde), getResources().getString(R.string.warning_procurando_oportunidades), true);
+            ringProgressDialog.show();
+            new ConsultOportunidades(SearchActivity.this).execute(objetos);
+        }
+
+        @Override
+        public void onNothingSelected(AdapterView<?> adapter) {
+            Toast.makeText(SearchActivity.this, "Escolha um curso", Toast.LENGTH_SHORT).show();
+        }
     }
 }

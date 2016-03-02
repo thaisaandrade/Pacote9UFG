@@ -25,7 +25,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.Oportunida
     private List<Oportunidade> oportunidades;
     Context context;
 
-    public SearchAdapter(Context context, List<Oportunidade> oportunidades){
+    public SearchAdapter(Context context, List<Oportunidade> oportunidades) {
         this.oportunidades = oportunidades;
         this.context = context;
     }
@@ -33,7 +33,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.Oportunida
     @Override
     public OportunidadeViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
         View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.row_oportunidade, viewGroup, false);
-        
+
         return new OportunidadeViewHolder(v);
     }
 
@@ -43,7 +43,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.Oportunida
         holder.oportunidadeCidade.setText("Cidade: " + oportunidades.get(position).getCidade());
         holder.oportunidadeTipo.setText("Horas semanais: " + oportunidades.get(position).getHoras());
 
-        if("S".equalsIgnoreCase(oportunidades.get(position).getBolsa())) {
+        if ("S".equalsIgnoreCase(oportunidades.get(position).getBolsa())) {
             holder.oportunidadeValor.setText("Salário/Bolsa: " + oportunidades.get(position).getValor());
         } else {
             holder.oportunidadeValor.setText("Salário/Bolsa: Não possui");
@@ -79,11 +79,11 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.Oportunida
 
         OportunidadeViewHolder(View itemView) {
             super(itemView);
-            cv = (CardView)itemView.findViewById(R.id.card);
-            oportunidadeName = (TextView)itemView.findViewById(R.id.nome_oportunidade);
-            oportunidadeValor = (TextView)itemView.findViewById(R.id.valor_bolsa);
-            oportunidadeTipo = (TextView)itemView.findViewById(R.id.tipo);
-            oportunidadeCidade = (TextView)itemView.findViewById(R.id.cidade);
+            cv = (CardView) itemView.findViewById(R.id.card);
+            oportunidadeName = (TextView) itemView.findViewById(R.id.nome_oportunidade);
+            oportunidadeValor = (TextView) itemView.findViewById(R.id.valor_bolsa);
+            oportunidadeTipo = (TextView) itemView.findViewById(R.id.tipo);
+            oportunidadeCidade = (TextView) itemView.findViewById(R.id.cidade);
         }
     }
 

@@ -29,23 +29,23 @@ import java.net.URL;
 import android.util.Log;
 
 public class GcmSender {
-    
+
     public static final String API_KEY = "AIzaSyCqgKyW_W2EtGBo9lzLxWqH6jiBmyetREk";
-    
+
     private GcmSender() {
     }
 
     public static void main(String[] args) {
         if (args.length < 1 || args.length > 2 || args[0] == null) {
             Log.d("", "usage: ./gradlew run -Pargs=\"MESSAGE[,DEVICE_TOKEN]\"");
-             Log.d("", "Specify a test message to broadcast via GCM. If a device's GCM registration token is\n" +
+            Log.d("", "Specify a test message to broadcast via GCM. If a device's GCM registration token is\n" +
                     "specified, the message will only be sent to that device. Otherwise, the message \n" +
                     "will be sent to all devices subscribed to the \"global\" topic.");
-             Log.d("", "Example (Broadcast):\n" +
+            Log.d("", "Example (Broadcast):\n" +
                     "On Windows:   .\\gradlew.bat run -Pargs=\"<Your_Message>\"\n" +
                     "On Linux/Mac: ./gradlew run -Pargs=\"<Your_Message>\"");
-            
-             Log.d("", "Example (Unicast):\n" +
+
+            Log.d("", "Example (Unicast):\n" +
                     "On Windows:   .\\gradlew.bat run -Pargs=\"<Your_Message>,<Your_Token>\"\n" +
                     "On Linux/Mac: ./gradlew run -Pargs=\"<Your_Message>,<Your_Token>\"");
             System.exit(1);
@@ -79,12 +79,12 @@ public class GcmSender {
             // Read GCM response.
             InputStream inputStream = conn.getInputStream();
             String resp = IOUtils.toString(inputStream);
-             Log.d("", resp);
-             Log.d("", "Check your device/emulator for notification or logcat for " +
+            Log.d("", resp);
+            Log.d("", "Check your device/emulator for notification or logcat for " +
                     "confirmation of the receipt of the GCM message.");
         } catch (IOException e) {
-             Log.d("", "Unable to send GCM message.");
-             Log.d("", "Please ensure that API_KEY has been replaced by the server " + "API key, and that the device's registration token is correct (if specified).");
+            Log.d("", "Unable to send GCM message.");
+            Log.d("", "Please ensure that API_KEY has been replaced by the server " + "API key, and that the device's registration token is correct (if specified).");
             Log.d("", "", e);
         } catch (JSONException e) {
             Log.d("", "", e);
