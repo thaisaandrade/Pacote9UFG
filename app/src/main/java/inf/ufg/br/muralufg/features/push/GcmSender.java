@@ -29,6 +29,9 @@ import java.net.URL;
 import android.util.Log;
 
 public class GcmSender {
+    
+    private GcmSender() {
+    }
 
     public static final String API_KEY = "AIzaSyCqgKyW_W2EtGBo9lzLxWqH6jiBmyetREk";
 
