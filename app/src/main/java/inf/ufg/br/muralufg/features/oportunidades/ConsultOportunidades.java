@@ -53,7 +53,6 @@ public class ConsultOportunidades extends AsyncTask<Object, Void, List<Oportunid
         InputStream is = null;
         // Only display the first 500 characters of the retrieved
         // web page content.
-        int len = 500;
         List<Oportunidade> oportunidades = new ArrayList<>();
 
         try {
