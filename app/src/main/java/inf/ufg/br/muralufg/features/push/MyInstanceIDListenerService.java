@@ -17,7 +17,6 @@
 package inf.ufg.br.muralufg.features.push;
 
 import android.content.Intent;
-import android.preference.PreferenceManager;
 import android.util.Log;
 
 import com.google.android.gms.iid.InstanceID;
