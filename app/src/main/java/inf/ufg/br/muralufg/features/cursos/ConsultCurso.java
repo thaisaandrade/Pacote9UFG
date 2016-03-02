@@ -78,10 +78,9 @@ public class ConsultCurso extends AsyncTask<Void, Void, List<Curso>> {
 
             } catch (JSONException e) {
                throw new RuntimeException(e);
+            } finally {
+                stream.close();
             }
-
-
-            stream.close();
         }catch (IOException e){
             return (List<Curso>) e;
         }catch (Exception e) {
