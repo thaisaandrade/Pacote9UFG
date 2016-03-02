@@ -92,7 +92,7 @@ public class ConsultCurso extends AsyncTask<Void, Void, List<Curso>> {
                 try {
                     is.close();
                 } catch (IOException e) {
-                    //
+                    Log.d("", "", e);
                 }
             }
         }
