@@ -36,7 +36,6 @@ public class MainActivity extends ActionBarActivity implements WebInterface, Log
 
     private ProgressDialog ringProgressDialog;
     private AsyncTask webConnection;
-    private SharedPreferences sharedPreferences;
     private ProgressBar mRegistrationProgressBar;
     private BroadcastReceiver mRegistrationBroadcastReceiver;
     private TextView mInformationTextView;
