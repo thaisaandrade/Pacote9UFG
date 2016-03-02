@@ -44,7 +44,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.Oportunida
         holder.oportunidadeTipo.setText("Horas semanais: " + oportunidades.get(position).getHoras());
 
         if(oportunidades.get(position).getBolsa().equalsIgnoreCase("S")) {
-            holder.oportunidadeValor.setText("Salário/Bolsa: " + String.valueOf(oportunidades.get(position).getValor()));
+            holder.oportunidadeValor.setText("Salário/Bolsa: " + oportunidades.get(position).getValor());
         } else {
             holder.oportunidadeValor.setText("Salário/Bolsa: Não possui");
         }
