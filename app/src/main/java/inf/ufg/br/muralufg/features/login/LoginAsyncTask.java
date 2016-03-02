@@ -108,7 +108,7 @@ public class LoginAsyncTask extends AsyncTask<User, Void, String>{
         listenerSituation.onConcludeConsultLogin(curso);
     }
 
-    @FunctionInterface
+    @FunctionalInterface
     public interface ConsultLogin {
         void onConcludeConsultLogin(String curso);
     }
