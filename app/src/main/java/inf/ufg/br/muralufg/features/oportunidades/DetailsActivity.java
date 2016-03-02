@@ -63,28 +63,6 @@ public class DetailsActivity extends ActionBarActivity {
 
         this.oportunidade = (Oportunidade)getIntent().getSerializableExtra("oportunidade");
 
-        /*ShareOpenGraphObject object = new ShareOpenGraphObject.Builder()
-                .putString("teste", "Cidade: " + oportunidade.getCidade().toUpperCase())
-                .putString("og:description", "Vaga: " + oportunidade.getTitulo().toUpperCase())
-                .putString("fitness:duration:units", "Descrição: " + oportunidade.getDescricao())
-                .putString("og:type", "Carga horária: " + oportunidade.getHoras() + " hs semanais")
-                .putString("og:title", "Horário: " + oportunidade.getHorario())
-                .putString("fitness:speed:units", "Bolsa: " + (oportunidade.getBolsa().equals("S") ? "Possui" : "Não possui"))
-                .putString("fitness:speed:units2", "Valor da bolsa: R$ " + oportunidade.getValor())
-                .putString("fitness:speed:units3", "Empresa/Instituição: " + oportunidade.getLocal())
-                .putString("fitness:speed:units8", "Endereço: " + oportunidade.getEndereco())
-                .putString("fitness:speed:units9", "Telefone: " + oportunidade.getTelefone())
-                .putString("fitness:speed:units7", "Email: " + Html.fromHtml("<a href=\"" + oportunidade.getEmail() + "\">" + oportunidade.getEmail() + "</a>"))
-                .build();
-        ShareOpenGraphAction action = new ShareOpenGraphAction.Builder()
-                .setActionType("news.publishes")
-                .putObject("news:teste", object)
-                .build();
-        ShareOpenGraphContent content1 = new ShareOpenGraphContent.Builder()
-                .setPreviewPropertyName("news:teste")
-                .setAction(action)
-                .build();*/
-
         horas = (TextView)findViewById(R.id.horas_details);
         titulo = (TextView)findViewById(R.id.titulo_details);
         descricao = (TextView)findViewById(R.id.descricao_details);
@@ -154,32 +132,8 @@ public class DetailsActivity extends ActionBarActivity {
         Bitmap b = Bitmap.createBitmap(v.getDrawingCache());
         v.setDrawingCacheEnabled(false);
 
-        /*view.setDrawingCacheEnabled(true);
-        view.buildDrawingCache();
-        Bitmap b1 = view.getDrawingCache();
-        Rect frame = new Rect();
-        activity.getWindow().getDecorView().getWindowVisibleDisplayFrame(frame);
-        int statusBarHeight = frame.top;
-        int width = activity.getWindowManager().getDefaultDisplay().getWidth();
-        int height = activity.getWindowManager().getDefaultDisplay().getHeight();
-
-        Bitmap b = Bitmap.createBitmap(b1, 0, statusBarHeight, width, height  - statusBarHeight);
-        view.destroyDrawingCache();*/
         return b;
 
     }
 
- /*
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.activity_datails_actions, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    public boolean estaNaHorizontal() {
-        return getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
-    }
-
-    */
 }
