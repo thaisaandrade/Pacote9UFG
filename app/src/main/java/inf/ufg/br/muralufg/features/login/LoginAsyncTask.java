@@ -53,7 +53,29 @@ public class LoginAsyncTask extends AsyncTask<User, Void, String>{
             java.util.Scanner s = new java.util.Scanner(stream).useDelimiter("\\A");
             String data = s.hasNext() ? s.next() : "";
 
-            returnUser(data, user);
+            try {
+
+                JSONObject reader = new JSONObject(data);
+    
+                JSONArray cursosArray  = reader.getJSONArray("users");
+    
+                for (int i = 0; i < cursosArray.length(); i++) {
+    
+                    User w = new User();
+                    w.setName(((JSONObject) cursosArray.get(i)).getString("usuario"));
+                    w.setPassword(((JSONObject) cursosArray.get(i)).getString("senha"));
+                    w.setCurso(((JSONObject) cursosArray.get(i)).getString("curso"));
+    
+                    if (user.getName().equals(w.getName()) && user.getPassword().equals(w.getPassword())) {
+                        this.responseCode = 200;
+                        return w.getCurso();
+                    }
+    
+                }
+                
+            } catch (JSONException e) {
+                Log.d("", "", e);
+            }
 
             stream.close();
         }catch (IOException e){
@@ -72,35 +94,6 @@ public class LoginAsyncTask extends AsyncTask<User, Void, String>{
 
         return null;
 
-    }
-    
-    private User returnUser(String data, User user) {
-        try {
-
-            JSONObject reader = new JSONObject(data);
-
-            JSONArray cursosArray  = reader.getJSONArray("users");
-
-            for (int i = 0; i < cursosArray.length(); i++) {
-
-                User w = new User();
-                w.setName(((JSONObject) cursosArray.get(i)).getString("usuario"));
-                w.setPassword(((JSONObject) cursosArray.get(i)).getString("senha"));
-                w.setCurso(((JSONObject) cursosArray.get(i)).getString("curso"));
-
-                if (user.getName().equals(w.getName()) && user.getPassword().equals(w.getPassword())) {
-                    this.responseCode = 200;
-                    return w.getCurso();
-                }
-
-            }
-            
-            return null;
-            
-        } catch (JSONException e) {
-            Log.d("", "", e);
-        }
-        
     }
 
     public String readIt(InputStream stream, int len) throws IOException, UnsupportedEncodingException {
