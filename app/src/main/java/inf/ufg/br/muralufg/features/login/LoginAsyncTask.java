@@ -53,7 +53,7 @@ public class LoginAsyncTask extends AsyncTask<User, Void, String>{
             java.util.Scanner s = new java.util.Scanner(stream).useDelimiter("\\A");
             String data = s.hasNext() ? s.next() : "";
 
-            returnUser(data);
+            returnUser(data, user);
 
             stream.close();
         }catch (IOException e){
@@ -74,7 +74,7 @@ public class LoginAsyncTask extends AsyncTask<User, Void, String>{
 
     }
     
-    private returnUser(String data) {
+    private User returnUser(String data, User user) {
         try {
 
             JSONObject reader = new JSONObject(data);
@@ -94,10 +94,13 @@ public class LoginAsyncTask extends AsyncTask<User, Void, String>{
                 }
 
             }
-
+            
+            return null;
+            
         } catch (JSONException e) {
             Log.d("", "", e);
         }
+        
     }
 
     public String readIt(InputStream stream, int len) throws IOException, UnsupportedEncodingException {
