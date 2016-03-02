@@ -20,6 +20,9 @@ import inf.ufg.br.muralufg.model.User;
 
 /**
  * Created by Marla Aragao.
+ * classe responsavel por efetuar
+ * o login de um usuário cadastrado
+ * no app
  */
 public class LoginAsyncTask extends AsyncTask<User, Void, String> {
 
@@ -31,6 +34,11 @@ public class LoginAsyncTask extends AsyncTask<User, Void, String> {
         this.listenerSituation = listenerSituation;
     }
 
+    /**
+     * Metodo responsavel por conectar ao webservice
+     * via http e efetuar login do usuário
+     *
+     */
     @Override
     protected String doInBackground(User... params) {
 

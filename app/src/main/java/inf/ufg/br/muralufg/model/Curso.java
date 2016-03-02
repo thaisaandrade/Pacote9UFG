@@ -1,7 +1,8 @@
 package inf.ufg.br.muralufg.model;
 
-/**
- * Created by Marla Aragão on 01/07/2015.
+/**Esta classe model é responsavel
+ * pela definição do objeto curso
+ * com seus metodos gets e sets *
  */
 public class Curso {
 

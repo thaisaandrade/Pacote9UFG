@@ -21,6 +21,10 @@ import inf.ufg.br.muralufg.model.Oportunidade;
 
 /**
  * Created by Marla Aragão.
+ *
+ * Classe responsavel por realizar
+ * a consulta de oportunidades no web service
+ *
  */
 
 public class ConsultOportunidades extends AsyncTask<Object, Void, List<Oportunidade>> {
@@ -48,6 +52,10 @@ public class ConsultOportunidades extends AsyncTask<Object, Void, List<Oportunid
         return this.oportunidades;
     }
 
+    /**
+     * metodo resposavel pela conexão via http com o webservice
+     *
+     */
     private List<Oportunidade> consultServer(Curso curso, String opcao) {
 
         InputStream is = null;

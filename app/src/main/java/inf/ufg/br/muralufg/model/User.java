@@ -1,6 +1,9 @@
 package inf.ufg.br.muralufg.model;
 
-
+/**Esta classe model é responsavel
+ * pela definição do objeto User
+ * com seus metodos gets e sets *
+ */
 public class User {
 
     private String name;

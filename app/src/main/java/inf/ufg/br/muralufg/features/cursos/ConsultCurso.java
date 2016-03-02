@@ -40,6 +40,11 @@ public class ConsultCurso extends AsyncTask<Void, Void, List<Curso>> {
         return this.cursos;
     }
 
+    /**
+     * Esre método é reponsável pela busca
+     * de cursos no webservice, atraves de uma
+     * conexão http
+     */
     private List<Curso> consultServer() {
 
         InputStream is = null;
@@ -87,6 +92,11 @@ public class ConsultCurso extends AsyncTask<Void, Void, List<Curso>> {
 
     }
 
+    /**
+     * Este metodo é responsavel por retornar em uma lista
+     * os cursos presentes no arquivo
+     *
+     */
     private List<Curso> readCursos(String data) throws JSONException {
         JSONObject reader = new JSONObject(data);
 

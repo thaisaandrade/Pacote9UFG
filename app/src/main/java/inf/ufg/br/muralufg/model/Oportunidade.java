@@ -5,6 +5,10 @@ import java.io.Serializable;
 /**
  * Created by Marla Aragão on 01/07/2015.
  */
+/**Esta classe model é responsavel
+ * pela definição do objeto Oportunidade
+ * com seus metodos gets e sets *
+ */
 public class Oportunidade implements Serializable {
 
     private int id;
