@@ -113,8 +113,6 @@ public class ConsultOportunidades extends AsyncTask<Object, Void, List<Oportunid
 
 
             stream.close();
-        } catch (IOException e) {
-            Log.d("", "", e);
         } catch (Exception e) {
             Log.d("", "", e);
         } finally {
