@@ -79,10 +79,8 @@ public class ConsultOportunidades extends AsyncTask<Object, Void, List<Oportunid
 
                 for (int i = 0; i < cursosArray.length(); i++) {
 
-                    if (curso != null) {
-                        if (curso.getId() != ((JSONObject)cursosArray.get(i)).getInt("id")) {
-                            continue;
-                        }
+                    if (curso != null && (curso.getId() != ((JSONObject)cursosArray.get(i)).getInt("id"))) {
+                        continue;
                     }
 
                     JSONArray oportunityInformation = ((JSONObject)cursosArray.get(i)).getJSONObject("oportunidades").getJSONArray(opcao);
