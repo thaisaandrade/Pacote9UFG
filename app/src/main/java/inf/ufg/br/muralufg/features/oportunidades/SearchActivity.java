@@ -27,7 +27,7 @@ import inf.ufg.br.muralufg.model.Curso;
 import inf.ufg.br.muralufg.utils.WebInterface;
 
 
-public class  SearchActivity extends ActionBarActivity
+public class SearchActivity extends ActionBarActivity
         implements ConsultCurso.ConsultCursoSituation, ConsultOportunidades.ConsultOportunidadeSituation, WebInterface {
 
     private AsyncTask taskCurso;
@@ -52,7 +52,7 @@ public class  SearchActivity extends ActionBarActivity
         id_curso = getIntent().getStringExtra("curso");
 
 
-        final Spinner s =  (Spinner) findViewById(R.id.cursos);
+        final Spinner s = (Spinner) findViewById(R.id.cursos);
 
         opcoes = (RadioGroup) findViewById(R.id.opoes);
         estagio = (RadioButton) findViewById(R.id.estagio);
@@ -63,26 +63,26 @@ public class  SearchActivity extends ActionBarActivity
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
 
-            List<Object> objetos = new ArrayList<Object>();
-            objetos.add(s.getSelectedItem());
+                List<Object> objetos = new ArrayList<Object>();
+                objetos.add(s.getSelectedItem());
 
-            if(checkedId == R.id.estagio) {
-                objetos.add("estagios");
-            } else if(checkedId == R.id.emprego) {
-                objetos.add("empregos");
-            } else if (checkedId == R.id.pesquisa){
-                objetos.add("pesquisas");
-            }
+                if (checkedId == R.id.estagio) {
+                    objetos.add("estagios");
+                } else if (checkedId == R.id.emprego) {
+                    objetos.add("empregos");
+                } else if (checkedId == R.id.pesquisa) {
+                    objetos.add("pesquisas");
+                }
 
-            ringProgressDialog = ProgressDialog.show(SearchActivity.this, getResources().getString(R.string.warning_aguarde),
-                    getResources().getString(R.string.warning_procurando_oportunidades), true);
-            ringProgressDialog.show();
-            new ConsultOportunidades(SearchActivity.this).execute(objetos);
+                ringProgressDialog = ProgressDialog.show(SearchActivity.this, getResources().getString(R.string.warning_aguarde),
+                        getResources().getString(R.string.warning_procurando_oportunidades), true);
+                ringProgressDialog.show();
+                new ConsultOportunidades(SearchActivity.this).execute(objetos);
 
             }
         });
 
-        rv = (RecyclerView)findViewById(R.id.rv);
+        rv = (RecyclerView) findViewById(R.id.rv);
 
         LinearLayoutManager llm = new LinearLayoutManager(this);
         rv.setLayoutManager(llm);
@@ -100,7 +100,7 @@ public class  SearchActivity extends ActionBarActivity
         spinner_cursos = (Spinner) findViewById(R.id.cursos);
 
         final CursoAdapter dataAdapter = new CursoAdapter(this, android.R.layout.simple_spinner_dropdown_item, cursos);
-       // dataAdapter.setDropDownViewResource(R.layout.spinner_item);
+        // dataAdapter.setDropDownViewResource(R.layout.spinner_item);
 
         spinner_cursos.setAdapter(dataAdapter);
 
@@ -110,7 +110,7 @@ public class  SearchActivity extends ActionBarActivity
             int id = 0;
 
             try {
-               id = Integer.parseInt(id_curso);
+                id = Integer.parseInt(id_curso);
             } catch (Exception e) {
 
             }
@@ -142,11 +142,11 @@ public class  SearchActivity extends ActionBarActivity
                 List<Object> objetos = new ArrayList<>();
                 objetos.add(curso);
 
-                if(opcoes.getCheckedRadioButtonId() == estagio.getId()) {
+                if (opcoes.getCheckedRadioButtonId() == estagio.getId()) {
                     objetos.add("estagios");
-                } else if(opcoes.getCheckedRadioButtonId() == emprego.getId()) {
+                } else if (opcoes.getCheckedRadioButtonId() == emprego.getId()) {
                     objetos.add("empregos");
-                } else if(opcoes.getCheckedRadioButtonId() == pesquisa.getId()){
+                } else if (opcoes.getCheckedRadioButtonId() == pesquisa.getId()) {
                     objetos.add("pesquisas");
                 }
 
@@ -156,6 +156,7 @@ public class  SearchActivity extends ActionBarActivity
                 new ConsultOportunidades(SearchActivity.this).execute(objetos);
 
             }
+
             @Override
             public void onNothingSelected(AdapterView<?> adapter) {
                 Toast.makeText(SearchActivity.this, "Escolha um curso", Toast.LENGTH_SHORT).show();
@@ -191,7 +192,7 @@ public class  SearchActivity extends ActionBarActivity
         showError(error);
     }
 
-    public void showError(String error){
+    public void showError(String error) {
         Toast.makeText(this, error,
                 Toast.LENGTH_LONG).show();
     }
@@ -205,7 +206,7 @@ public class  SearchActivity extends ActionBarActivity
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        if(ringProgressDialog.isShowing()){
+        if (ringProgressDialog.isShowing()) {
             taskCurso.cancel(true);
         }
         finish();

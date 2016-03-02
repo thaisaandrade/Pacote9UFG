@@ -24,8 +24,9 @@ import inf.ufg.br.muralufg.model.Oportunidade;
 public class ConsultOportunidades extends AsyncTask<Object, Void, List<Oportunidade>> {
 
     private ConsultOportunidadeSituation listenerSituation;
-    private final static String URL_CONNECTION = "https://dl.dropboxusercontent.com/s/mologtlfcosag0n/oportunidades.json?dl=0"; ;
+    private final static String URL_CONNECTION = "https://dl.dropboxusercontent.com/s/mologtlfcosag0n/oportunidades.json?dl=0";
     private List<Oportunidade> oportunidades = new ArrayList<>();
+
 
     public ConsultOportunidades(ConsultOportunidadeSituation listenerSituation) {
         this.listenerSituation = listenerSituation;
@@ -73,17 +74,17 @@ public class ConsultOportunidades extends AsyncTask<Object, Void, List<Oportunid
                 List<Oportunidade> oportunidades = new ArrayList<>();
                 JSONObject reader = new JSONObject(data);
 
-                JSONArray cursosArray  = reader.getJSONArray("cursos");
+                JSONArray cursosArray = reader.getJSONArray("cursos");
 
                 for (int i = 0; i < cursosArray.length(); i++) {
 
                     if (curso != null) {
-                        if (curso.getId() != ((JSONObject)cursosArray.get(i)).getInt("id")) {
+                        if (curso.getId() != ((JSONObject) cursosArray.get(i)).getInt("id")) {
                             continue;
                         }
                     }
 
-                    JSONArray oportunityInformation = ((JSONObject)cursosArray.get(i)).getJSONObject("oportunidades").getJSONArray(opcao);
+                    JSONArray oportunityInformation = ((JSONObject) cursosArray.get(i)).getJSONObject("oportunidades").getJSONArray(opcao);
 
                     for (int j = 0; j < oportunityInformation.length(); j++) {
 
@@ -113,9 +114,9 @@ public class ConsultOportunidades extends AsyncTask<Object, Void, List<Oportunid
 
 
             stream.close();
-        }catch (IOException e){
+        } catch (IOException e) {
             return null;
-        }catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         } finally {
             if (is != null) {

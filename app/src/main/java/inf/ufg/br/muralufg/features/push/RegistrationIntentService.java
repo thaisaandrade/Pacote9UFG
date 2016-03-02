@@ -83,7 +83,7 @@ public class RegistrationIntentService extends IntentService {
 
     /**
      * Persist registration to third-party servers.
-     *
+     * <p/>
      * Modify this method to associate the user's GCM registration token with any server-side account
      * maintained by your application.
      *
@@ -91,7 +91,7 @@ public class RegistrationIntentService extends IntentService {
      */
     private static void sendRegistrationToServer(String token) {
         // Add custom implementation, as needed.
-   }
+    }
 
     /**
      * Subscribe to any GCM topics of interest, as defined by the TOPICS constant.

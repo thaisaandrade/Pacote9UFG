@@ -20,7 +20,7 @@ import inf.ufg.br.muralufg.model.User;
 /**
  * Created by Marla Aragao.
  */
-public class LoginAsyncTask extends AsyncTask<User, Void, String>{
+public class LoginAsyncTask extends AsyncTask<User, Void, String> {
 
     private ConsultLogin listenerSituation;
     private User user;
@@ -57,7 +57,7 @@ public class LoginAsyncTask extends AsyncTask<User, Void, String>{
 
                 JSONObject reader = new JSONObject(data);
 
-                JSONArray cursosArray  = reader.getJSONArray("users");
+                JSONArray cursosArray = reader.getJSONArray("users");
 
                 for (int i = 0; i < cursosArray.length(); i++) {
 
@@ -79,9 +79,9 @@ public class LoginAsyncTask extends AsyncTask<User, Void, String>{
 
 
             stream.close();
-        }catch (IOException e){
+        } catch (IOException e) {
             return null;
-        }catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         } finally {
             if (is != null) {

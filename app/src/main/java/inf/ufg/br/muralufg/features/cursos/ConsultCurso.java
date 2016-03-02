@@ -2,6 +2,7 @@ package inf.ufg.br.muralufg.features.cursos;
 
 
 import android.os.AsyncTask;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -23,7 +24,7 @@ public class ConsultCurso extends AsyncTask<Void, Void, List<Curso>> {
 
     private ConsultCursoSituation listenerSituation;
     private static final String URL_CONNECTION = "https://dl.dropboxusercontent.com/s/mologtlfcosag0n/oportunidades.json?dl=0";
-    private List<Curso> cursos= new ArrayList<>();
+    private List<Curso> cursos = new ArrayList<>();
 
     public ConsultCurso(ConsultCursoSituation listenerSituation) {
         this.listenerSituation = listenerSituation;
@@ -40,8 +41,10 @@ public class ConsultCurso extends AsyncTask<Void, Void, List<Curso>> {
     private List<Curso> consultServer() {
 
         InputStream is = null;
-        // Only display the first 500 characters of the retrieved
-        // web page content..
+
+        /** Only display the first 500 characters of the retrieved
+        * web page content..
+        */
 
         try {
 
@@ -61,15 +64,15 @@ public class ConsultCurso extends AsyncTask<Void, Void, List<Curso>> {
             try {
                 JSONObject reader = new JSONObject(data);
 
-                JSONArray information  = reader.getJSONArray("cursos");
+                JSONArray information = reader.getJSONArray("cursos");
 
                 List<Curso> cursos = new ArrayList<>();
 
                 for (int i = 0; i < information.length(); i++) {
 
                     Curso w = new Curso();
-                    w.setId(((JSONObject)information.get(i)).getInt("id"));
-                    w.setNome(((JSONObject)information.get(i)).getString("nome"));
+                    w.setId(((JSONObject) information.get(i)).getInt("id"));
+                    w.setNome(((JSONObject) information.get(i)).getString("nome"));
 
                     cursos.add(w);
                 }
@@ -82,9 +85,9 @@ public class ConsultCurso extends AsyncTask<Void, Void, List<Curso>> {
 
 
             stream.close();
-        }catch (IOException e){
+        } catch (IOException e) {
             return (List<Curso>) e;
-        }catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         } finally {
             if (is != null) {
