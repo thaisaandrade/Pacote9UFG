@@ -30,10 +30,10 @@ import android.util.Log;
 
 public class GcmSender {
     
+    public static final String API_KEY = "AIzaSyCqgKyW_W2EtGBo9lzLxWqH6jiBmyetREk";
+    
     private GcmSender() {
     }
-
-    public static final String API_KEY = "AIzaSyCqgKyW_W2EtGBo9lzLxWqH6jiBmyetREk";
 
     public static void main(String[] args) {
         if (args.length < 1 || args.length > 2 || args[0] == null) {
