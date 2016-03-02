@@ -90,7 +90,7 @@ public class ConsultOportunidades extends AsyncTask<Object, Void, List<Oportunid
                         Oportunidade w = new Oportunidade();
                         w.setBolsa(((JSONObject) oportunityInformation.get(j)).getString("bolsa"));
                         w.setCidade(((JSONObject) oportunityInformation.get(j)).getString("cidade"));
-                        w.setDescricao((((JSONObject) oportunityInformation.get(j)).getString("descricao")));
+                        w.setDescricao(((JSONObject) oportunityInformation.get(j)).getString("descricao"));
                         w.setEmail(((JSONObject) oportunityInformation.get(j)).getString("email"));
                         w.setEndereco(((JSONObject) oportunityInformation.get(j)).getString("endereco"));
                         w.setId(((JSONObject) oportunityInformation.get(j)).getInt("id"));
