@@ -17,7 +17,6 @@
 package inf.ufg.br.muralufg.features.push;
 
 import org.apache.commons.io.IOUtils;
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
