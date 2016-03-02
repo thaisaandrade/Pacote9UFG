@@ -14,6 +14,8 @@ import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import android.util.Log;
+
 import inf.ufg.br.muralufg.model.User;
 
 
@@ -74,7 +76,7 @@ public class LoginAsyncTask extends AsyncTask<User, Void, String>{
                 }
 
             } catch (JSONException e) {
-                e.printStackTrace();
+                Log.d("", "", e);
             }
 
 
