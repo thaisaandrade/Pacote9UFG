@@ -168,7 +168,7 @@ public class  SearchActivity extends ActionBarActivity
         finish();
     }
     
-    class ItemSelectedListener extends AdapterView.OnItemSelectedListener {
+    class ItemSelectedListener implements AdapterView.OnItemSelectedListener {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
                 final Curso curso = (Curso) dataAdapter.getItem(position);
