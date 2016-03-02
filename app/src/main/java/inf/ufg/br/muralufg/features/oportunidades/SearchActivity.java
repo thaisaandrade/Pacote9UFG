@@ -68,11 +68,15 @@ public class  SearchActivity extends ActionBarActivity
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                     List<Object> objetos = new ArrayList<>();
                     objetos.add(s.getSelectedItem());
-        
-                    if (checkedId == R.id.estagio) { objetos.add("estagios"); } 
-                    else if (checkedId == R.id.emprego) { objetos.add("empregos"); } 
-                    else if (checkedId == R.id.pesquisa){ objetos.add("pesquisas"); }
-        
+                    if (checkedId == R.id.estagio) { 
+                            objetos.add("estagios"); 
+                    } 
+                    else if (checkedId == R.id.emprego) {
+                            objetos.add("empregos"); 
+                    } 
+                    else if (checkedId == R.id.pesquisa){ 
+                            objetos.add("pesquisas"); 
+                    }
                     ringProgressDialog = ProgressDialog.show(SearchActivity.this, getResources().getString(R.string.warning_aguarde), getResources().getString(R.string.warning_procurando_oportunidades), true);
                     ringProgressDialog.show();
                     new ConsultOportunidades(SearchActivity.this).execute(objetos);
