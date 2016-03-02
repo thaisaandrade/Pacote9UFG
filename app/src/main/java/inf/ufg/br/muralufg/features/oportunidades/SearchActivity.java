@@ -35,7 +35,7 @@ public class  SearchActivity extends ActionBarActivity
     private AsyncTask taskCurso;
     private ProgressDialog ringProgressDialog;
     private SearchAdapter adapter;
-    private Spinner spinner_cursos;
+    private Spinner spinnerCursos;
     private RecyclerView rv;
     private RadioGroup opcoes;
     private RadioButton estagio, pesquisa, emprego;
@@ -99,12 +99,12 @@ public class  SearchActivity extends ActionBarActivity
     // add items into spinner dynamically
     public void addItemsOnSpinner(List<Curso> cursos) {
 
-        spinner_cursos = (Spinner) findViewById(R.id.cursos);
+        spinnerCursos = (Spinner) findViewById(R.id.cursos);
 
         final CursoAdapter dataAdapter = new CursoAdapter(this, android.R.layout.simple_spinner_dropdown_item, cursos);
        // dataAdapter.setDropDownViewResource(R.layout.spinner_item);
 
-        spinner_cursos.setAdapter(dataAdapter);
+        spinnerCursos.setAdapter(dataAdapter);
 
 
         if (id_curso != null && id_curso != "") {
@@ -118,12 +118,12 @@ public class  SearchActivity extends ActionBarActivity
             }
 
             int position_curso = dataAdapter.getPosition(dataAdapter.getItemById(id));
-            spinner_cursos.setSelection(position_curso);
+            spinnerCursos.setSelection(position_curso);
         }
 
         sharedPreferences = getSharedPreferences("curso", Context.MODE_PRIVATE);
 
-        spinner_cursos.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        spinnerCursos.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view,
