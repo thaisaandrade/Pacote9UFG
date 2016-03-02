@@ -37,17 +37,15 @@ public class GcmSender {
 
     public static void main(String[] args) {
         if (args.length < 1 || args.length > 2 || args[0] == null) {
-            System.err.println("usage: ./gradlew run -Pargs=\"MESSAGE[,DEVICE_TOKEN]\"");
-            System.err.println("");
-            System.err.println("Specify a test message to broadcast via GCM. If a device's GCM registration token is\n" +
+            Log.d("", "usage: ./gradlew run -Pargs=\"MESSAGE[,DEVICE_TOKEN]\"");
+             Log.d("", "Specify a test message to broadcast via GCM. If a device's GCM registration token is\n" +
                     "specified, the message will only be sent to that device. Otherwise, the message \n" +
                     "will be sent to all devices subscribed to the \"global\" topic.");
-            System.err.println("");
-            System.err.println("Example (Broadcast):\n" +
+             Log.d("", "Example (Broadcast):\n" +
                     "On Windows:   .\\gradlew.bat run -Pargs=\"<Your_Message>\"\n" +
                     "On Linux/Mac: ./gradlew run -Pargs=\"<Your_Message>\"");
-            System.err.println("");
-            System.err.println("Example (Unicast):\n" +
+            
+             Log.d("", "Example (Unicast):\n" +
                     "On Windows:   .\\gradlew.bat run -Pargs=\"<Your_Message>,<Your_Token>\"\n" +
                     "On Linux/Mac: ./gradlew run -Pargs=\"<Your_Message>,<Your_Token>\"");
             System.exit(1);
@@ -81,12 +79,12 @@ public class GcmSender {
             // Read GCM response.
             InputStream inputStream = conn.getInputStream();
             String resp = IOUtils.toString(inputStream);
-            System.out.println(resp);
-            System.out.println("Check your device/emulator for notification or logcat for " +
+             Log.d("", resp);
+             Log.d("", "Check your device/emulator for notification or logcat for " +
                     "confirmation of the receipt of the GCM message.");
         } catch (IOException e) {
-            System.out.println("Unable to send GCM message.");
-            System.out.print("Please ensure that API_KEY has been replaced by the server " + "API key, and that the device's registration token is correct (if specified).");
+             Log.d("", "Unable to send GCM message.");
+             Log.d("", "Please ensure that API_KEY has been replaced by the server " + "API key, and that the device's registration token is correct (if specified).");
             Log.d("", "", e);
         } catch (JSONException e) {
             Log.d("", "", e);
