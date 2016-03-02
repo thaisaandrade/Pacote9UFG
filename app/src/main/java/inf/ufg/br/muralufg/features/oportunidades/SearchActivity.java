@@ -66,7 +66,7 @@ public class  SearchActivity extends ActionBarActivity
         opcoes.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                    List<Object> objetos = new ArrayList<Object>();
+                    List<Object> objetos = new ArrayList<>();
                     objetos.add(s.getSelectedItem());
         
                     if (checkedId == R.id.estagio) { objetos.add("estagios"); } 
