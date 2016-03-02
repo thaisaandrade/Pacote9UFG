@@ -119,8 +119,8 @@ public class  SearchActivity extends ActionBarActivity
                 Log.d("", "", e);
             }
 
-            int position_curso = dataAdapter.getPosition(dataAdapter.getItemById(id));
-            spinnerCursos.setSelection(position_curso);
+            int positionCurso = dataAdapter.getPosition(dataAdapter.getItemById(id));
+            spinnerCursos.setSelection(positionCurso);
         }
 
         sharedPreferences = getSharedPreferences(CURSO, Context.MODE_PRIVATE);
