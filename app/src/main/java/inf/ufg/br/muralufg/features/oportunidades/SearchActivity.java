@@ -41,6 +41,8 @@ public class  SearchActivity extends ActionBarActivity
     private RadioButton estagio, pesquisa, emprego;
     private SharedPreferences sharedPreferences;
     private String idCurso;
+    
+    private static final String CURSO = "curso";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +53,7 @@ public class  SearchActivity extends ActionBarActivity
         String nome = getIntent().getStringExtra("titulo");
         getSupportActionBar().setTitle(nome);
 
-        idCurso = getIntent().getStringExtra("curso");
+        idCurso = getIntent().getStringExtra(CURSO);
 
 
         final Spinner s =  (Spinner) findViewById(R.id.cursos);
@@ -121,7 +123,7 @@ public class  SearchActivity extends ActionBarActivity
             spinnerCursos.setSelection(position_curso);
         }
 
-        sharedPreferences = getSharedPreferences("curso", Context.MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences(CURSO, Context.MODE_PRIVATE);
 
         spinnerCursos.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
@@ -132,7 +134,7 @@ public class  SearchActivity extends ActionBarActivity
                 final Curso curso = (Curso) dataAdapter.getItem(position);
 
                 SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putString("curso", String.valueOf(curso.getId()));
+                editor.putString(CURSO, String.valueOf(curso.getId()));
                 editor.commit();
 
                 int teste = opcoes.getCheckedRadioButtonId();
