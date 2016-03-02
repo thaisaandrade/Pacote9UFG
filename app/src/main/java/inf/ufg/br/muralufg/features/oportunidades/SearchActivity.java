@@ -120,37 +120,24 @@ public class  SearchActivity extends ActionBarActivity
         spinnerCursos.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
             @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view,
-                                       int position, long id) {
-
+            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
                 final Curso curso = (Curso) dataAdapter.getItem(position);
-
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putString(CURSO, String.valueOf(curso.getId()));
                 editor.commit();
 
                 int teste = opcoes.getCheckedRadioButtonId();
-
-                if (opcoes.getCheckedRadioButtonId() == -1) {
-                    estagio.setChecked(true);
-                }
-
+                if (opcoes.getCheckedRadioButtonId() == -1) { estagio.setChecked(true); }
                 List<Object> objetos = new ArrayList<>();
                 objetos.add(curso);
 
-                if(opcoes.getCheckedRadioButtonId() == estagio.getId()) {
-                    objetos.add("estagios");
-                } else if(opcoes.getCheckedRadioButtonId() == emprego.getId()) {
-                    objetos.add("empregos");
-                } else if(opcoes.getCheckedRadioButtonId() == pesquisa.getId()){
-                    objetos.add("pesquisas");
-                }
-
-                ringProgressDialog = ProgressDialog.show(SearchActivity.this, getResources().getString(R.string.warning_aguarde),
-                        getResources().getString(R.string.warning_procurando_oportunidades), true);
+                if (opcoes.getCheckedRadioButtonId() == estagio.getId()) { objetos.add("estagios"); } 
+                else if (opcoes.getCheckedRadioButtonId() == emprego.getId()) { objetos.add("empregos"); } 
+                else if (opcoes.getCheckedRadioButtonId() == pesquisa.getId()){ objetos.add("pesquisas"); }
+                
+                ringProgressDialog = ProgressDialog.show(SearchActivity.this, getResources().getString(R.string.warning_aguarde), getResources().getString(R.string.warning_procurando_oportunidades), true);
                 ringProgressDialog.show();
                 new ConsultOportunidades(SearchActivity.this).execute(objetos);
-
             }
             @Override
             public void onNothingSelected(AdapterView<?> adapter) {
