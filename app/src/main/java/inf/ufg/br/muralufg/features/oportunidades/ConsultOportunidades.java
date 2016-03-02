@@ -53,7 +53,7 @@ public class ConsultOportunidades extends AsyncTask<Object, Void, List<Oportunid
         InputStream is = null;
         // Only display the first 500 characters of the retrieved
         // web page content.
-        List<Oportunidade> oportunidades = new ArrayList<>();
+        List<Oportunidade> oportunidadesList = new ArrayList<>();
 
         try {
 
@@ -103,11 +103,11 @@ public class ConsultOportunidades extends AsyncTask<Object, Void, List<Oportunid
                         w.setValor(((JSONObject) oportunityInformation.get(j)).getString("valor"));
                         w.setHorario(((JSONObject) oportunityInformation.get(j)).getString("horario"));
 
-                        oportunidades.add(w);
+                        oportunidadesList.add(w);
                     }
                 }
 
-                return oportunidades;
+                return oportunidadesList;
 
             } catch (JSONException e) {
                 Log.d("", "", e);
@@ -129,7 +129,7 @@ public class ConsultOportunidades extends AsyncTask<Object, Void, List<Oportunid
             }
         }
 
-        return oportunidades;
+        return oportunidadesList;
     }
 
 
