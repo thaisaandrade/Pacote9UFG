@@ -49,7 +49,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.Oportunida
             holder.oportunidadeValor.setText("Salário/Bolsa: Não possui");
         }
 
-        ((OportunidadeViewHolder) holder).cv.setOnClickListener(new View.OnClickListener() {
+        holder.cv.setOnClickListener(new View.OnClickListener() {
             @TargetApi(Build.VERSION_CODES.HONEYCOMB)
             @Override
             public void onClick(View v) {
