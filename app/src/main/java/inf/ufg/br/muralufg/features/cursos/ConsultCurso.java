@@ -110,7 +110,6 @@ public class ConsultCurso extends AsyncTask<Void, Void, List<Curso>> {
         listenerSituation.onConcludeConsultCurso(cursos);
     }
 
-    @FunctionalInterface
     public interface ConsultCursoSituation {
         void onConcludeConsultCurso(List<Curso> cursos);
     }
