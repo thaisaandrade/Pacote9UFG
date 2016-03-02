@@ -91,7 +91,7 @@ public class ConsultCurso extends AsyncTask<Void, Void, List<Curso>> {
 
         JSONArray information  = reader.getJSONArray("cursos");
 
-        List<Curso> cursos = new ArrayList<>();
+        List<Curso> cursosList = new ArrayList<>();
 
         for (int i = 0; i < information.length(); i++) {
 
@@ -99,10 +99,10 @@ public class ConsultCurso extends AsyncTask<Void, Void, List<Curso>> {
             w.setId(((JSONObject)information.get(i)).getInt("id"));
             w.setNome(((JSONObject)information.get(i)).getString("nome"));
 
-            cursos.add(w);
+            cursosList.add(w);
         }
         
-        return cursos;
+        return cursosList;
     }
 
     @Override
