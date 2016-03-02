@@ -14,7 +14,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.util.Log;
-import java.util.function;
 
 import inf.ufg.br.muralufg.model.Curso;
 import inf.ufg.br.muralufg.model.Oportunidade;
@@ -135,7 +134,7 @@ public class ConsultOportunidades extends AsyncTask<Object, Void, List<Oportunid
         listenerSituation.onConcludeConsultOportunidade(oportunidades);
     }
 
-    @FunctionalInterface
+
     public interface ConsultOportunidadeSituation {
         void onConcludeConsultOportunidade(List<Oportunidade> oportunidades);
     }
