@@ -177,7 +177,6 @@ public class MainActivity extends ActionBarActivity implements WebInterface, Log
 
             Intent intent = new Intent(this, SearchActivity.class);
             intent.putExtra("titulo", (String) "Mural UFG");
-            //String lastSearch = getSharedPreferences("lastSearch", Context.MODE_PRIVATE).getString("curso", "");
             intent.putExtra("curso", curso);
             startActivity(intent);
         }
