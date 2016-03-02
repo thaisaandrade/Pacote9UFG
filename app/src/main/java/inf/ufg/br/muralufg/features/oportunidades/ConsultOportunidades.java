@@ -13,6 +13,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.util.Log;
+
 import inf.ufg.br.muralufg.model.Curso;
 import inf.ufg.br.muralufg.model.Oportunidade;
 
@@ -108,21 +110,21 @@ public class ConsultOportunidades extends AsyncTask<Object, Void, List<Oportunid
                 return oportunidades;
 
             } catch (JSONException e) {
-                e.printStackTrace();
+                Log.d("", "", e);
             }
 
 
             stream.close();
         }catch (IOException e){
-            return null;
+           Log.d("", "", e);
         }catch (Exception e) {
-            e.printStackTrace();
+           Log.d("", "", e);
         } finally {
             if (is != null) {
                 try {
                     is.close();
                 } catch (IOException e) {
-                    e.printStackTrace();
+                    Log.d("", "", e);
                 }
             }
         }
