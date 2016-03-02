@@ -33,8 +33,8 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.Oportunida
     @Override
     public OportunidadeViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
         View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.row_oportunidade, viewGroup, false);
-        OportunidadeViewHolder pvh = new OportunidadeViewHolder(v);
-        return pvh;
+        
+        return new OportunidadeViewHolder(v);
     }
 
     @Override
