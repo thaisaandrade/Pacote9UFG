@@ -117,7 +117,7 @@ public class  SearchActivity extends ActionBarActivity
 
         sharedPreferences = getSharedPreferences(CURSO, Context.MODE_PRIVATE);
 
-        spinnerCursos.setOnItemSelectedListener(new ItemSelectedListener());
+        spinnerCursos.setOnItemSelectedListener(new ItemSelectedListener(dataAdapter));
 
     }
 
@@ -169,9 +169,16 @@ public class  SearchActivity extends ActionBarActivity
     }
     
     class ItemSelectedListener implements AdapterView.OnItemSelectedListener {
+            
+            private CursoAdapter dataAdapter;
+            
+            public ItemSelectedListener(CursoAdapter dataAdapter) {
+                this.dataAdapter = dataAdapter;
+            }
+            
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
-                final Curso curso = (Curso) dataAdapter.getItem(position);
+                final Curso curso = (Curso) this.dataAdapter.getItem(position);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putString(CURSO, String.valueOf(curso.getId()));
                 editor.commit();
