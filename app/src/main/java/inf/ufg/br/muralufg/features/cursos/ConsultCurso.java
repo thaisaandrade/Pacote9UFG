@@ -16,8 +16,8 @@ import java.util.List;
 
 import inf.ufg.br.muralufg.model.Curso;
 
-/**
- * Created by Marla Aragão.
+/** Esta classe é reponsavel por realizar
+ *  a consulta de cursos no web service
  */
 
 public class ConsultCurso extends AsyncTask<Void, Void, List<Curso>> {
