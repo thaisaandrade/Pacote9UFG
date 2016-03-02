@@ -36,4 +36,9 @@ dependencies {
     compile 'com.google.android.gms:play-services:7.5.+'
     compile "commons-io:commons-io:+"
 
+    androidTestCompile 'junit:junit:4.12'
+
+    androidTestCompile 'com.android.support.test:runner:0.2'
+    androidTestCompile 'com.android.support.test:rules:0.2'
+    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.1'
 }
