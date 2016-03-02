@@ -86,7 +86,7 @@ public class ConsultCurso extends AsyncTask<Void, Void, List<Curso>> {
         
     }
 
-    private List<Curso> readCursos(String data) {
+    private List<Curso> readCursos(String data) throws JSONException {
         JSONObject reader = new JSONObject(data);
 
         JSONArray information  = reader.getJSONArray("cursos");
