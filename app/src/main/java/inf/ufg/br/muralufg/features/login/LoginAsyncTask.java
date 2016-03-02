@@ -80,15 +80,15 @@ public class LoginAsyncTask extends AsyncTask<User, Void, String>{
 
             stream.close();
         }catch (IOException e){
-            return null;
+            Log.d("", "", e);
         }catch (Exception e) {
-            e.printStackTrace();
+            Log.d("", "", e);
         } finally {
             if (is != null) {
                 try {
                     is.close();
                 } catch (IOException e) {
-                    e.printStackTrace();
+                    Log.d("", "", e);
                 }
             }
         }
