@@ -19,6 +19,8 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.util.Log;
+
 import inf.ufg.br.muralufg.R;
 import inf.ufg.br.muralufg.features.cursos.ConsultCurso;
 import inf.ufg.br.muralufg.features.cursos.CursoAdapter;
@@ -112,7 +114,7 @@ public class  SearchActivity extends ActionBarActivity
             try {
                id = Integer.parseInt(id_curso);
             } catch (Exception e) {
-
+                Log.d("", "", e);
             }
 
             int position_curso = dataAdapter.getPosition(dataAdapter.getItemById(id));
