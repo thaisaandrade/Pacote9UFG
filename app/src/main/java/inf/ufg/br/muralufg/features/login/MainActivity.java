@@ -137,6 +137,11 @@ public class MainActivity extends ActionBarActivity implements WebInterface, Log
         ringProgressDialog.dismiss();
         showError(error);
     }
+    
+    @Override
+    public void handleResponse(Object object) {
+        //overrides abstract method handleResponse(Object) in WebInterface
+    }
 
     public void searchVisitante(View v){
         int id = v.getId();
