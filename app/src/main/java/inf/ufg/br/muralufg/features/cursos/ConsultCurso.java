@@ -13,7 +13,6 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-
 import inf.ufg.br.muralufg.model.Curso;
 
 /**
@@ -78,22 +77,21 @@ public class ConsultCurso extends AsyncTask<Void, Void, List<Curso>> {
                 return cursos;
 
             } catch (JSONException e) {
-                LOGGER.info(e);
+               throw new RuntimeException(e);
             }
 
 
             stream.close();
         }catch (IOException e){
-            LOGGER.info(e);
             return (List<Curso>) e;
         }catch (Exception e) {
-            LOGGER.info(e);
+            throw new RuntimeException(e);
         } finally {
             if (is != null) {
                 try {
                     is.close();
                 } catch (IOException e) {
-                    LOGGER.info(e);
+                    throw new RuntimeException(e);
                 }
             }
         }
