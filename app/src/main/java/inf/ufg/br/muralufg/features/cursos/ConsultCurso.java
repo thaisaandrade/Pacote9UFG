@@ -61,22 +61,8 @@ public class ConsultCurso extends AsyncTask<Void, Void, List<Curso>> {
             String data = s.hasNext() ? s.next() : "";
 
             try {
-                JSONObject reader = new JSONObject(data);
 
-                JSONArray information  = reader.getJSONArray("cursos");
-
-                List<Curso> cursos = new ArrayList<>();
-
-                for (int i = 0; i < information.length(); i++) {
-
-                    Curso w = new Curso();
-                    w.setId(((JSONObject)information.get(i)).getInt("id"));
-                    w.setNome(((JSONObject)information.get(i)).getString("nome"));
-
-                    cursos.add(w);
-                }
-
-                return cursos;
+                return readCursos(data);
 
             } catch (JSONException e) {
                Log.d("", "", e);
@@ -100,6 +86,24 @@ public class ConsultCurso extends AsyncTask<Void, Void, List<Curso>> {
         
     }
 
+    private List<Curso> readCursos(String data) {
+        JSONObject reader = new JSONObject(data);
+
+        JSONArray information  = reader.getJSONArray("cursos");
+
+        List<Curso> cursos = new ArrayList<>();
+
+        for (int i = 0; i < information.length(); i++) {
+
+            Curso w = new Curso();
+            w.setId(((JSONObject)information.get(i)).getInt("id"));
+            w.setNome(((JSONObject)information.get(i)).getString("nome"));
+
+            cursos.add(w);
+        }
+        
+        return cursos;
+    }
 
     @Override
     protected void onPostExecute(List<Curso> cursos) {
