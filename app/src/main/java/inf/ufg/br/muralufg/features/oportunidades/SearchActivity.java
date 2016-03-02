@@ -40,7 +40,7 @@ public class  SearchActivity extends ActionBarActivity
     private RadioGroup opcoes;
     private RadioButton estagio, pesquisa, emprego;
     private SharedPreferences sharedPreferences;
-    private String id_curso;
+    private String idCurso;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +51,7 @@ public class  SearchActivity extends ActionBarActivity
         String nome = getIntent().getStringExtra("titulo");
         getSupportActionBar().setTitle(nome);
 
-        id_curso = getIntent().getStringExtra("curso");
+        idCurso = getIntent().getStringExtra("curso");
 
 
         final Spinner s =  (Spinner) findViewById(R.id.cursos);
@@ -107,12 +107,12 @@ public class  SearchActivity extends ActionBarActivity
         spinnerCursos.setAdapter(dataAdapter);
 
 
-        if (id_curso != null && id_curso != "") {
+        if (idCurso != null && idCurso != "") {
 
             int id = 0;
 
             try {
-               id = Integer.parseInt(id_curso);
+               id = Integer.parseInt(idCurso);
             } catch (Exception e) {
                 Log.d("", "", e);
             }
